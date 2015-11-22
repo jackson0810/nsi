@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="robots" content="index, follow"><meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE"><meta HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<script language="javascript">
+//-- These colors are used in design templates
+
+var col_primary="#4f78a6";
+var col_secondary="#ffffff";
+var col_tertiary="#990000";
+var col_background="#f0f0e6";
+
+</script>
+
+
+<script language="JavaScript" src="../scripts/ic_globals_published.js"></script><script language="JavaScript" src="scripts/user.js"></script><script language="JavaScript" src="scripts/photoalbum.js"></script>
+<title></title>
+<link rel="stylesheet" media="screen" href="scripts/template.css"><link rel="stylesheet" media="all" href="scripts/website.css"><link rel="stylesheet" media="print" href="scripts/print.css"><link rel="stylesheet" media="all" href="scripts/1custom.css"><link rel="stylesheet" media="all" href="scripts/icwebsiteelement.css">
+<style type="text/css">
+* html #left-shadow-fade {
+    background-image:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src=images/left-side-shadow.png);
+}
+* html #right-shadow-fade {
+    background-image:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src=images/right-side-shadow.png);
+}
+* html #nav-top #header-top #header-png {
+    background-image:none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src=images/nav-bar-overlay.png);
+}
+* html #nav-top #navcontainer div a:link, 
+* html #nav-top #navcontainer div a:active, 
+* html #nav-top #navcontainer div a:visited {
+    background-image:none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src=images/nav-background.png);
+}
+</style>
+</head>
+<body id="regular" class="background" onload="processMenus();sizeColumns();">
+<div id="printwrap">
+<div id="nav-top">
+<div id="inner">
+<div id="header-top">
+<div id="header-png" class="primary">&nbsp;</div>
+<div id="logo-holder">
+<h2 id="website-slogan">Quality - Integrity - Victory</h2>
+</div>
+<div id="navcontainer">
+<div><a class="tertiary" href="home.html" target="_self">
+<h3>Home</h3>
+</a></div>
+<div><a class="tertiary" href="aboutus.html" target="_self">
+<h3>About Us</h3>
+</a></div>
+<div><a class="tertiary" href="capabilities.html" target="_self">
+<h3>Capabilities</h3>
+</a></div>
+<div><a class="tertiary" href="clients.html" target="_self">
+<h3>Clients</h3>
+</a></div>
+<div><a class="tertiary" href="contactus.html" target="_self">
+<h3>Contact Us</h3>
+</a></div>
+<div><a class="tertiary" href="chinalake.html" target="_self">
+<h3>China Lake</h3>
+</a></div>
+<div><a class="tertiary" href="mrol.html" target="_self">
+<h3>MRO&amp;L</h3>
+</a></div>
+<div><a class="tertiary" href="careers.html" target="_self">
+<h3>Careers</h3>
+</a></div>
+<div><a class="tertiary" href="news.html" target="_self">
+<h3>News</h3>
+</a></div>
+<div><a class="tertiary" href="seaporte.html" target="_self">
+<h3>SeaPort-e</h3>
+</a></div>
+</div>
+</div>
+<div id="content">
+<div class="clearer secondary">&nbsp;</div>
+<table id="content-table" border="0">
+<tbody>
+<tr>
+<td id="content-table-main" align="left" valign="top">
+							<!-- Start content section -->
+<div id="pagecols">
+<div id="column1">
+<div id="colbody1" class="colbody">
+<div id="pgbldblk23" class="building_block">
+<div id="body_pgbldblk23" class="blockbody">
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tbody>
+<tr>
+<td width="100%" valign="top"><span style="font-family: Arial; color: black;">
+<div><span style="font-family: Arial; color: #666666; font-size: medium;"><span style="color: #999999; font-size: x-small;"><strong>[Home]<br /></strong></span><br /><strong>WELCOME</strong></span></div>
+</span><span style="color: #666666;">
+<p class="MsoNormal" style="MARGIN: 0in 0in 0pt; TEXT-ALIGN: justify"><span style="FONT-SIZE: 10pt; COLOR: #666666; FONT-FAMILY: Arial"><br />Naval Systems, Inc. (NSI),&nbsp;is a Veteran Owned Small Business supporting the Naval Air Systems Command from locations near <!--?xml:namespace prefix = st1 ns = "urn:schemas-microsoft-com:office:smarttags" /-->Patuxent River, Maryland; Cherry Point, North Carolina; Jacksonville, Florida; and China Lake,&nbsp;California.&nbsp;Our main office is located in Lexington&nbsp;Park, Maryland;&nbsp; just minutes from NAS Patuxent River. NSI has experienced strong growth since our founding and has developed a reputation among clients for superior quality, cost and schedule performance; providing innovative solutions to difficult problems; and demonstrating uncompromising devotion to the ultimate customer: our Navy and Marine Corps warfighters. NSI's outstanding value to our customers results from&nbsp;a great depth of knowledge in engineering, logistics, and management disciplines by the leadership team and key employees, a flat management structure&nbsp;and extremely efficient business model, and&nbsp;many years of cumulative hands-on experience in Naval Aviation operations and depot level support. The NSI&nbsp;culture has been built upon the core values of </span><span><span><span style="color: #9999ff;"><em><strong><span style="FONT-SIZE: 10pt; COLOR: #0000bf; FONT-FAMILY: Arial">Quality, Integrity,</span></strong></em><strong><span style="FONT-SIZE: 10pt; COLOR: #0000bf; FONT-FAMILY: Arial"> </span></strong><span style="FONT-SIZE: 10pt; COLOR: #0000bf; FONT-FAMILY: Arial">and <strong><em><span style="FONT-FAMILY: Arial">Victory</span></em></strong></span></span></span></span><span style="FONT-SIZE: 10pt; COLOR: #666666; FONT-FAMILY: Arial">.<br /></span></p>
+</span>
+<p align="center"><span style="font-family: Arial, Helvetica, sans-serif; color: #666666; font-size: x-small;"><br />&nbsp;<span style="font-family: 'arial narrow', arial, sans-serif;"><strong><span style="font-size: small;"><em>&nbsp;</em><span style="color: #000000;"><span style="color: #666666;">MISSION</span><br /><br /></span></span></strong></span></span></p>
+<p align="center"><span style="font-family: Arial, Helvetica, sans-serif; color: #666666; font-size: x-small;"><span style="FONT-SIZE: 10pt; COLOR: #666666; FONT-FAMILY: Arial">The NSI mission is to create and deliver products and services of unmatched value that answer our clients? most pressing needs.</span></span></p>
+<br />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="pgbldblk3" class="building_block">
+<div id="body_pgbldblk3" class="blockbody">
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tbody>
+<tr>
+<td width="50%" valign="top"></td>
+<td width="50%" align="center" valign="top">
+					
+<table border="0" cellspacing="0" cellpadding="0" width="NaN" summary="image table">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<td align="center"><img src="images/spacer.gif" border="0" alt="" width="50%" /></td>
+</tr>
+<tr>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="pgbldblk9" class="building_block">
+<div id="body_pgbldblk9" class="blockbody">
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tbody>
+<tr>
+<td width="100%" valign="top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="pgbldblk13" class="building_block">
+<div id="body_pgbldblk13" class="blockbody">
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tbody>
+<tr>
+<td width="100%" valign="top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="pgbldblk17" class="building_block">
+<div id="body_pgbldblk17" class="blockbody">
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+<tbody>
+<tr>
+<td width="100%" valign="top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="column2">
+</div>
+<div id="column3">
+</div>
+</div>
+<table id="other_footer" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<td align="left" valign="middle"></td>
+</tr>
+<tr>
+<td align="left" valign="middle"></td>
+</tr>
+</tbody>
+</table>
+<!-- End content section -->
+						</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>
+<script><!--
+// Column Height Script
+function pngHeight() {
+if (document.all) {
+	document.getElementById('inner').style.zIndex=1000;
+	document.getElementById('right-shadow-fade').style.zIndex=1;
+}
+	if (document.getElementById('inner') || document.getElementById('nav-right')) {
+		var pngH = document.getElementById('footer').offsetTop;
+		if (document.all) {
+			document.getElementById('right-shadow-fade').style.height=pngH;
+			document.getElementById('left-shadow-fade').style.height=pngH;
+		}
+		else {
+			document.getElementById('right-shadow-fade').style.height=pngH + "px";
+			document.getElementById('left-shadow-fade').style.height=pngH + "px";
+		}
+	}
+}
+var oldhandler = window.onload;
+window.onload = (typeof oldhandler == "function")
+    ? function() { oldhandler(); pngHeight(); } : pngHeight;
+// --></script>
+</p>
+</body>
+</html>
