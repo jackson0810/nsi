@@ -13,7 +13,7 @@ PASSWORD_REGEX = r'(?=^.{10,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\
 UUID_PATTERN_REGEX = '([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12})'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DJANGO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_ROOT = os.path.dirname(DJANGO_ROOT)
 SITE_NAME = os.path.basename(DJANGO_ROOT)
@@ -124,7 +124,7 @@ USE_L10N = True
 USE_TZ = True
 
 MEDIA_URL = '/media/'
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.abspath(os.path.join(SETTINGS_ROOT, '../', 'static'))
 STATIC_URL = '/static/'
 
 # List of finder classes that know how to find static files in
