@@ -43,7 +43,10 @@
   /* 4. Content Below wrapper */
 }
 #footer {
-  /* 5. Footer wrapper */
+  min-height: 100px;
+}
+#footer .inner {
+  padding: 15px 0;
 }
 /*
  * --------------------------------------------------

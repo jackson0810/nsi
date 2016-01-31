@@ -7,6 +7,6 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     # Shared Application
-    url(r'^shared/', include('shared.urls')),
+    url(r'^shared/', include('shared.urls'), name='shared'),
     url(r'^impersonate/', include('impersonate.urls')),
 ]

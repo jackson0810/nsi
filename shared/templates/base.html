@@ -18,7 +18,7 @@
         <!-- Theme style -->
         <link href="{% static 'css/theme-style.css' %}" rel="stylesheet">
         <!-- Your custom override -->
-    {#    <link href="{% static 'css/custom-style.css' %}" rel="stylesheet">#}
+        <link href="{% static 'css/custom-style.css' %}" rel="stylesheet">
         <!-- @option: Colour skins, choose from:
             1. colour-blue.css
             2. colour-red.css
@@ -90,7 +90,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="">Careers</a></li>
-                                    <li><a href="contact.htm">Contact</a></li>
+                                    <li><a href="">Contact</a></li>
                                 </ul>
                             </div>
                             <!--/.nav-collapse -->
@@ -135,10 +135,10 @@
                                             <img src="{% static 'img/home/canstockphoto1922327_comp.jpg' %}" />
                                         </li>
                                         <li class="col-xs-4">
-                                            <img src="{% static 'img/home/canstockphoto2161137_comp.jpg' %}" />
+                                            <img src="{% static 'img/home/canstockphoto1327471_comp.jpg' %}" />
                                         </li>
                                         <li class="col-xs-4">
-                                            <img src="{% static 'img/home/canstockphoto1327471_comp.jpg' %}" />
+                                            <img src="{% static 'img/home/canstockphoto2161137_comp.jpg' %}" />
                                         </li>
                                     </ul>
                                 </div>
@@ -156,6 +156,13 @@
                 </div>
             </div>
         </div>
+        <div class="colour-switcher tool">
+            <a href="#blue" class="blue active">Blue</a>
+            <a href="#green" class="green">Green</a>
+            <a href="#red" class="red">Red</a>
+            <a href="#purple" class="purple">Purple</a>
+            <a href="#grey" class="grey">Grey</a>
+        </div>
     </div>
 
     <!-- ======== @Region: #footer ======== -->
@@ -164,12 +171,14 @@
             <div class="row">
                 <div class="col-md-4 col contact-block">
                     <address>
-                        <p><strong>Naval Systems, Inc.</strong></p>
-                        <p>21491 Great Mills Road, Suite 100</p>
-                        <p>Lexington Park, MD 20653</p>
-                        <p>Phone: (301) 737-1911</p>
-                        <p>Fax: (301) 737-1940</p>
-                        <p>Email: info@nsi.com</p>
+                        <p>
+                            <strong>Naval Systems, Inc.</strong><br/>
+                            21491 Great Mills Road, Suite 100<br/>
+                            Lexington Park, MD 20653<br/>
+                            Phone: (301) 737-1911<br/>
+                            Fax: (301) 737-1940<br/>
+                            Email: info@nsi.com
+                        </p>
                     </address>
                 </div>
                 <div class="pull-right">© 2014 Naval Systems, Inc.</div>
