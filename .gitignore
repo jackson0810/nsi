@@ -3,3 +3,5 @@
 .vagrant/
 requirements_installed
 .htaccess
+.DS_Store
+.gitignore.save
