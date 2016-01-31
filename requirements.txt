@@ -1,0 +1,9 @@
+django==1.9.1
+django-suit==0.3a3
+django-datatables-view==1.13.0
+django_debug_toolbar==1.4.0
+django-localflavor==1.2
+passlib==1.6.5
+gunicorn==19.4.5
+python-dateutil==2.4.2
+
