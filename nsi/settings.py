@@ -65,6 +65,8 @@ INSTALLED_APPS = [
 # Applications
 INSTALLED_APPS += [
     'shared',
+    'external',
+    'internal',
 ]
 MIDDLEWARE_CLASSES = [
     #'stronghold.middleware.LoginRequiredMiddleware',

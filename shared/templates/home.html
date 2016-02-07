@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div id="highlighted">
+        <section class="flexslider-wrapper container">
+            <div class="header">
+                <h2 class="page-title">
+                    <span>Quality, Integrity, Teamwork and Success</span>
+                </h2>
+            </div>
+            <div class="flexslider" data-slidernav="auto" data-transition="slide">
+                <br/>
+                <!--The Slides-->
+                <div class="slides">
+                    <!--Slide #1 with caption-->
+                    <div class="slide">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="{% static 'img/slides/uss_harry_truman.jpg' %}"
+                                    alt="USS Harry S. Truman (CVN 75)" class="animated fadeInDownBig" />
+                                <br/>
+                            </div>
+                            <div class="col-sm-6 caption animated fadeInUpBig">
+                                <h2>
+                                    Aircraft carrier USS Harry S. Truman (CVN 75)
+                                </h2>
+
+                                <p>
+                                    ARABIAN GULF (Jan. 30, 2016) Aircraft carrier USS Harry S. Truman (CVN 75) transits the Arabian Gulf.
+                                    Harry S. Truman Carrier Strike Group is deployed in support of Operation Inherent Resolve,
+                                    maritime security operations, and theater security cooperation efforts in the U.S. 5th Fleet
+                                    area of operations. (U.S. Navy photo by Mass Communication Specialist 2nd Class Blagoj B. Petkovski/Released)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Slide #2 with caption-->
+                    <div class="slide">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="{% static 'img/slides/mh-60.jpg' %}" alt="Easy to customise" />
+                                <br/>
+                            </div>
+                            <div class="col-sm-6 caption">
+                                <h2>
+                                    MH-60S Sea Hawk Helicopter
+                                </h2>
+                                <span>
+                                    ATLANTIC OCEAN (Jan. 30, 2016) Sailors prepare to refuel an MH-60S Sea Hawk Helicopter assigned to the Tridents of Helicopter Sea Combat Squadron (HSC) 9 on the flight deck of the aircraft carrier USS Dwight D. Eisenhower (CVN 69). Dwight D. Eisenhower is currently underway preparing for the upcoming Board of Inspection and Survey (INSURV) and conducting carrier qualifications. (U.S. Navy photo by Mass Communication Specialist 3rd Class Ryan U. Kledzik/Released)
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Slide #3 & so on below-->
+                    <div class="slide">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="{% static 'img/slides/aircraft.jpg' %}" alt="Happy in all browsers" />
+                                <br/>
+                            </div>
+                            <div class="col-sm-6 caption">
+                                <h2>
+                                    A T-45C Goshawk
+                                </h2>
+                                <p>
+                                    ATLANTIC OCEAN (Feb. 4, 2016) A T-45C Goshawk assigned to Carrier Training Wing (CTW) 2 lands on the flight deck of the aircraft carrier USS Dwight D. Eisenhower (CVN 69). Dwight D. Eisenhower is currently underway preparing for the upcoming Board of Inspection and Survey (INSURV) and conducting carrier qualifications. (U.S. Navy photo by Mass Communication Specialist 3rd Class Jameson E. Lynch/Released)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="content" class="demos">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div>
+                        <p>
+                            Naval Systems, Inc. (NSI), is a Veteran Owned Small Business supporting the Naval Air Systems
+                            Command from locations near Patuxent River, Maryland; Cherry Point, North Carolina;
+                            Jacksonville, Florida; and China Lake, California.
+                        </p>
+                        <p>
+                            Our main office is located in Lexington Park, Maryland; just minutes from NAS Patuxent River.
+                            NSI has experienced strong growth since our founding and has developed a reputation among
+                            clients for superior quality, cost and schedule performance; providing innovative solutions
+                            to difficult problems; and demonstrating uncompromising devotion to the ultimate customer:
+                            our Navy and Marine Corps warfighters.Content Region With No Sidebars
+                        </p>
+
+                        <p>
+                            NSI's outstanding value to our customers results from a great depth of knowledge in
+                            engineering, logistics, and management disciplines by the leadership team and key employees,
+                            a flat management structure with an extremely efficient business model, and many years of
+                            cumulative hands-on experience in Naval Aviation operations and depot level support.
+                            The NSI culture has been built upon the core values of Quality, Integrity, and Victory.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
