@@ -39,10 +39,10 @@ else
     ${WORKDIR}/opt/python3.5.1/bin/python3 ${WORKDIR}/${SRCDIR}/manage.py collectstatic --noinput --settings=${SETTINGS_FILE} > /dev/null 2>&1
 
     echo "Installing requirements ..."
-    ${WORKDIR}/opt/python3.5.1/bin/pip3 install -r requirements.txt
+    ${WORKDIR}/opt/python3.5.1/bin/pip3 install -r ${WORKDIR}{$SRCDIR}requirements.txt
 
     echo "Moving passenger script"
-    cp ${WORKDIR}${SRCDIR}passenger_wsgi.py ${WORKDIR}/navalsystemsinc/
+    cp ${WORKDIR}${SRCDIR}/passenger_wsgi.py ${WORKDIR}/navalsystemsinc/
 
     echo "Done"
   fi
