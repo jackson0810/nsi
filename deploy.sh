@@ -1,7 +1,7 @@
 #!/bin/bash
 
-WORKDIR="/home/nsishell/navalsystemsinc/"
-SRCDIR="nsi"
+WORKDIR="/home/nsishell/"
+SRCDIR="navalsystemsinc/nsi"
 GITURL="git@github.com:jackson0810/nsi.git"
 DOCROOT="/home/nsishell/nsi"
 SETTINGS_FILE="nsi.settings"
@@ -36,14 +36,13 @@ else
     echo
 
     echo "Collect static ..."
-    ${WORKDIR}/opt/python3.5.1/bin/python3 ${WORKDIR}/navalsystemsinc/manage.py collectstatic --noinput --settings=${SETTINGS_FILE} > /dev/null 2>&1
+    ${WORKDIR}/opt/python3.5.1/bin/python3 ${WORKDIR}/${SRCDIR}/manage.py collectstatic --noinput --settings=${SETTINGS_FILE} > /dev/null 2>&1
 
     echo "Installing requirements ..."
     ${WORKDIR}/opt/python3.5.1/bin/pip3 install -r requirements.txt
 
     echo "Moving passenger script"
-    cd ${WORKDIR}
-    cp passenger_wsgi.py .
+    cp ${WORKDIR}${SRCDIR}passenger_wsgi.py ${WORKDIR}/navalsystemsinc/
 
     echo "Done"
   fi
