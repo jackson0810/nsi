@@ -10,7 +10,7 @@ cd ${WORKDIR}
 
 echo "Pulling from bitbucket (${GITURL}) and deploying..."
 
-if [ ! -d ${SRCDIR} ]; then
+if [ ! -d ${WORKDIR}${SRCDIR} ]; then
     git clone ${GITURL}
 fi
 
