@@ -41,6 +41,10 @@ else
     echo "Installing requirements ..."
     ${WORKDIR}/opt/python3.5.1/bin/pip3 install -r requirements.txt
 
+    echo "Moving passenger script"
+    cd ${WORKDIR}
+    cp navalsystemsinc/passenger_wsgi.py .
+
     echo "Done"
   fi
 fi
