@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORKDIR="/home/nsishell"
+WORKDIR="/home/nsishell/navalsystemsinc/"
 SRCDIR="nsi"
 GITURL="git@github.com:jackson0810/nsi.git"
 DOCROOT="/home/nsishell/nsi"
@@ -43,7 +43,7 @@ else
 
     echo "Moving passenger script"
     cd ${WORKDIR}
-    cp navalsystemsinc/passenger_wsgi.py .
+    cp passenger_wsgi.py .
 
     echo "Done"
   fi
