@@ -42,7 +42,7 @@ else
     $HOME/opt/python-3.5.1/bin/pip3 install -r ${WORKDIR}${SRCDIR}/requirements.txt
 
     echo "Moving passenger script"
-    cp ${WORKDIR}${SRCDIR}/passenger_wsgi.py ${WORKDIR}/navalsystemsinc/
+    cp ${WORKDIR}${SRCDIR}/passenger_wsgi.py ${WORKDIR}/
 
     echo "Done"
 fi
