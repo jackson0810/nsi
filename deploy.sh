@@ -39,7 +39,7 @@ else
     ${WORKDIR}${HOMEDIR}env/bin/python3 manage.py collectstatic --noinput --settings=nsi.settings > /dev/null 2>&1
 
     echo "Installing requirements ..."
-    ${WORKDIR}${HOMEDIR}env/bin/pip3 install -r ${PROJECT}/requirements.txt
+    ${WORKDIR}${HOMEDIR}env/bin/pip3 install -r requirements.txt
 
     echo "Moving passenger script"
     cp passenger_wsgi.py ${WORKDIR}${HOMEDIR}
