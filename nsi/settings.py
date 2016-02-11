@@ -126,7 +126,7 @@ USE_L10N = True
 USE_TZ = True
 
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.abspath(os.path.join(SETTINGS_ROOT, '../', 'static'))
+STATIC_ROOT = os.path.dirname(BASE_DIR) + '/public/static/'
 STATIC_URL = '/static/'
 
 # Simplified static file serving.

@@ -1,8 +1,7 @@
 import sys
 import os
 
-INTERP = "/home/nsishell/opt/python3.5.1/bin/python3"
-# INTERP is present twice so that the new python interpreter knows the actual executable path
+INTERP = "/home/nsishell/navalsystemsinc/env/bin/python"
 
 if sys.executable != INTERP:
     os.execl(INTERP, INTERP, *sys.argv)
@@ -11,9 +10,9 @@ cwd = os.getcwd()
 sys.path.append(cwd)
 sys.path.append(cwd + '/nsi')
 
-sys.path.insert(0, cwd + '/navalsystemsin/bin')
-sys.path.insert(0, cwd + '/navalsystemsinc/lib/python3.5/site-packages/django')
-sys.path.insert(0, cwd + '/navalsystemsinc/lib/python3.5/site-packages')
+sys.path.insert(0,cwd+'/env/bin')
+sys.path.insert(0,cwd+'/env/lib/python2.7/site-packages/django')
+sys.path.insert(0,cwd+'/env/lib/python2.7/site-packages')
 
 os.environ['DJANGO_SETTINGS_MODULE'] = "nsi.settings"
 
