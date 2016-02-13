@@ -2,8 +2,28 @@
 {% load staticfiles %}
 
 {% block title %}Home{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/breakingNews.css' %}"/>
+{% endblock %}
 
 {% block content %}
+    <br/><br/><br/><br/>
+    <div class="breakingNews" id="bn7" style="padding-bottom: 0px;">
+        <div class="bn-title"><h2>Latest News</h2><span></span></div>
+            <ul>
+                <li><a href="#"><span>CNN News</span> - Mauris interdum elit non sapien imperdiet, ac dapibus mi maximus</a></li>
+                <li><a href="#"><span>BBC News</span> - Nullam sit amet nisl ex</a></li>
+                <li><a href="#"><span>CNN News</span> - Cras lorem augue, facilisis a commodo in, facilisis finibus libero vel ultrices.</a></li>
+                <li><a href="#"><span>AOL News</span> - Maecenas imperdiet ante vitae neque facilisis cursus</a></li>
+                <li><a href="#"><span>YAHOO News</span> - Maecenas libero ipsum, placerat in mattis vel, tincidunt quis est.</a></li>
+                <li><a href="#"><span>BBC News</span> - Curabitur tortor libero, vehicula sagittis luctus sed, lobortis sed arcu</a></li>
+            </ul>
+            <div class="bn-navi">
+                <span></span>
+                <span></span>
+            </div>
+    </div>
+
     <div id="highlighted">
         <section class="flexslider-wrapper container">
             <div class="header">
@@ -108,4 +128,18 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block extra_scripts %}
+    <script src="{% static 'js/breakingNews.js' %}"></script>
+    <script>
+	    $(window).load(function(e) {
+            $("#bn7").breakingNews({
+                effect		:"slide-v",
+                autoplay	:true,
+                timer		:3000,
+                color		:'darkred',
+                border      :true
+            });
+        });
+    </script>
 {% endblock %}
