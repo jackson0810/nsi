@@ -37,7 +37,7 @@ $(document).ready(function() {
     var sliderSettings =  {
       animation: $(this).attr('data-transition'),
       selector: ".slides > .slide",
-      controlNav: true,
+      controlNav: false,
       smoothHeight: true,
       animationLoop: false,
     };

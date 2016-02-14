@@ -76,3 +76,11 @@
  * Other stuff
  *--------------------------------------------------
  */
+#navigation .navbar-inner .inner {
+  min-height: 90px;
+}
+
+ul#main-menu li {
+  padding: 0;
+  font-size: 12px;
+}

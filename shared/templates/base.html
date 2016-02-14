@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <title>Naval Systems Inc. - {% block title %}{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
 
@@ -14,8 +14,6 @@
         <link href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
         <!-- animate.css CSS -->
         <link href="{% static 'plugins/animate/animate.min.css' %}" rel="stylesheet">
-        <!-- Flexslider -->
-        <link href="{% static 'plugins/flexslider/flexslider.css' %}" rel="stylesheet">
         <!-- Theme style -->
         <link href="{% static 'css/theme-style.css' %}" rel="stylesheet">
         <!-- Your custom override -->
@@ -57,23 +55,25 @@
                                     <span class="icon-bar"></span>
                                 </button>
                                 <a class="navbar-brand" href="{% url 'external:home' %}" title="Home">
-                                    <img src="{% static 'img/logo.png' %}" width="115"/>
+                                    <img src="{% static 'img/logo_warfighter.png' %}" style="position: absolute"/>
                                 </a>
                             </div>
                             <div class="collapse navbar-collapse">
-                                <ul class="nav navbar-right" id="main-menu">
+                                <br/>
+                                <ul class="nav navbar-right" id="main-menu" style="position:relative">
                                     <li><a href="{% url 'external:about_us' %}">About Us</a></li>
                                     <li><a href="{% url 'external:services' %}">Services</a></li>
                                     <li><a href="">Clients/Partners</a></li>
                                     <li class="dropdown">
-                                        <a href="portfolio.htm" class="dropdown-toggle" id="china-drop"
-                                           data-toggle="dropdown">China Lake
+                                        <a href="portfolio.htm" class="dropdown-toggle" id="locations-drop"
+                                           data-toggle="dropdown">Locations
                                         </a>
 
                                         <!-- Dropdown Menu -->
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="china-drop">
-                                            <li role="menuitem"><a href="" tabindex="-1">About</a></li>
-                                            <li role="menuitem"><a href="" tabindex="-1">Areas of Expertise</a></li>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="locations-drop">
+                                            <li role="menuitem"><a href="" tabindex="-1">China Lake</a></li>
+                                            <li role="menuitem"><a href="" tabindex="-1">Jacksonville</a></li>
+                                            <li role="menuitem"><a href="" tabindex="-1">Patuxent River</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown">
@@ -96,24 +96,22 @@
         </div>
 
         {% block content %}{% endblock %}
-
         <!-- ======== @Region: #footer ======== -->
         <footer id="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col contact-block">
                         <address>
-                            <p>
+                            <small>
                                 <strong>Naval Systems, Inc.</strong><br/>
                                 21491 Great Mills Road, Suite 100<br/>
                                 Lexington Park, MD 20653<br/>
                                 Phone: (301) 737-1911<br/>
                                 Fax: (301) 737-1940<br/>
-                                Email: info@nsi.com
-                            </p>
+                            </small>
                         </address>
                     </div>
-                    <div class="pull-right">© 2014 Naval Systems, Inc.</div>
+                    <small class="pull-right">© 2014 Naval Systems, Inc.</small>
                 </div>
             </div>
         </footer>
@@ -127,7 +125,6 @@
         <!--Plugins / Non-Bootstrap Javascript -->
         <script src="{% static 'plugins/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
         <script src="{% static 'plugins/isotope/dist/isotope.pkgd.min.js' %}"></script>
-        <script src="{% static 'plugins/flexslider/jquery.flexslider-min.js' %}"></script>
 
         <!--Custom scripts mainly used to trigger libraries -->
         <script src="{% static 'js/script.js' %}"></script>
