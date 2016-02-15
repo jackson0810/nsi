@@ -23,9 +23,6 @@
                 <div class="col-sm-3 sidebar sidebar-left">
                     <div class="inner">
                         <div class="block">
-                            <h3 class="block-title sub-title">
-                                <span>About Menu</span>
-                            </h3>
                             <ul class="nav nav-list secondary-nav">
                                 <li>
                                     <a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> About</a>
@@ -35,6 +32,9 @@
                                 </li>
                                 <li>
                                     <a href="#quality"><i class="fa fa-chevron-right"></i> Quality Assurance Plan</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.seaport.navy.mil/Home.aspx" target="_blank"><i class="fa fa-chevron-right"></i> SeaPort-e Website</a>
                                 </li>
                             </ul>
                         </div>
@@ -71,9 +71,33 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="block">
+                                <h3 class="block-title sub-title">
+                                    <span>Contact</span>
+                                </h3>
+                                <!--accordion-->
+                                <div class="panel-group panel-primary" id="accordion2">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <strong>Diana Waldorf</strong><br/>
+                                            Director of Corporate Operations<br/>
+                                            <i class="fa fa-phone"></i> 301.737.1911<br/>
+                                            <i class="fa fa-envelope-o"></i> dwaldorf@n-s-i.us
+                                        </div>
+
+                                        <div class="panel-heading">
+                                            <strong>Gadsden 'Ed' Rule</strong><br/>
+                                            President<br/>
+                                            <i class="fa fa-phone"></i> 301.919.1272<br/>
+                                            <i class="fa fa-envelope-o"></i> erule@n-s-i.us
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="block mdrs">
-                            <a href="#" class="btn btn-block btn-info"><i class="fa fa-download"></i>
+                            <a href="{% static 'documents/NSISeaPorteTeamMemberInfo3614.pdf' %}" class="btn btn-block btn-info"><i class="fa fa-download"></i>
                                 Team Member List
                             </a>
                         </div>
