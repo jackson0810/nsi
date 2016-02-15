@@ -7,5 +7,7 @@ urlpatterns = patterns(
     url(r'^services/$', 'services', name="services"),
     url(r'^clients/partners/$', 'clients_partners', name="clients_partners"),
     url(r'^locations/china/lake/$', 'china_lake', name='china_lake'),
-    url(r'^contract/vehicles/seaport-e/$', 'seaporte', name='seaporte')
+    url(r'^contract/vehicles/seaport-e/$', 'seaporte', name='seaporte'),
+    url(r'^careers/$', 'careers', name='careers'),
 )
+

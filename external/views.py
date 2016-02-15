@@ -23,3 +23,7 @@ def china_lake(request):
 
 def seaporte(request):
     return render(request, 'contract_vehicles/seaport-e.html')
+
+
+def careers(request):
+    return render(request, 'careers.html')
