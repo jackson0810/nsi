@@ -104,3 +104,13 @@ ul#main-menu li {
     max-height: 350px;
     width: 585px;
 }
+
+.header .page-title {
+  margin: 15px 0 8px 0;
+}
+
+ul.shaded-glyph li i.glyphicon {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}

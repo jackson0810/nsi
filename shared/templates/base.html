@@ -67,7 +67,6 @@
                                 <ul class="nav navbar-right" id="main-menu" style="position:relative">
                                     <li><a href="{% url 'external:about_us' %}">About Us</a></li>
                                     <li><a href="{% url 'external:services' %}">Services</a></li>
-                                    <li><a href="">Clients/Partners</a></li>
                                     <li class="dropdown">
                                         <a href="portfolio.htm" class="dropdown-toggle" id="locations-drop"
                                            data-toggle="dropdown">Locations
@@ -75,17 +74,20 @@
 
                                         <!-- Dropdown Menu -->
                                         <ul class="dropdown-menu" role="menu" aria-labelledby="locations-drop">
-                                            <li role="menuitem"><a href="" tabindex="-1">China Lake</a></li>
+                                            <li role="menuitem"><a href="{% url 'external:china_lake' %}" tabindex="-1">China Lake</a></li>
                                             <li role="menuitem"><a href="" tabindex="-1">Jacksonville</a></li>
                                             <li role="menuitem"><a href="" tabindex="-1">Patuxent River</a></li>
                                         </ul>
                                     </li>
+                                    <li><a href="{% url 'external:services' %}">News</a></li>
+                                    <li><a href="{% url 'external:clients_partners' %}">Clients/Partners</a></li>
+
                                     <li class="dropdown">
                                         <a href="" class="dropdown-toggle" id="contract-drop" data-toggle="dropdown">Contract Vehicles</a>
 
                                         <!-- Dropdown Menu -->
                                         <ul class="dropdown-menu" role="menu" aria-labelledby="contract-drop">
-                                            <li role="menuitem"><a href="" tabindex="-1">SeaPort-e</a></li>
+                                            <li role="menuitem"><a href="{% url 'external:seaporte' %}" tabindex="-1">SeaPort-e</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="">Careers</a></li>
