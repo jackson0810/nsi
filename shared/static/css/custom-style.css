@@ -1,21 +1,21 @@
 /*/////////////////////////////////////////////////////////////////////
- // 
+ //
  // Custom theme code styles
  // Written by Themelize.me (http://themelize.me)
- // 
+ //
  // This is an empty starter template for overriding styles
  // set by Bootstrap & the theme
- // 
+ //
  // ----------------------------------------------------
- // 
+ //
  // Remove unused code for better performances
- // 
+ //
  // ----------------------------------------------------
- // 
+ //
  // @see - Usefuls tools online for editing
  // 1. http://charliepark.org/bootstrap_buttons/ - Button style generator
  // 2. http://www.colorzilla.com/gradient-editor/ - CSS3 gradient maker
- // 
+ //
  // @note
  // To ensure custom styles are picked up
  // wrap definitions in body tag
@@ -23,7 +23,7 @@
  // body .navbar-inner {
  //   background: #ff0000;
  // }
- // 
+ //
  /////////////////////////////////////////////////////////////////////*/
 /*
  * --------------------------------------------------
@@ -51,7 +51,7 @@
 /*
  * --------------------------------------------------
  * 2. Colours
- *-------------------------------------------------- 
+ *--------------------------------------------------
  */
 /*
  * --------------------------------------------------
@@ -77,10 +77,30 @@
  *--------------------------------------------------
  */
 #navigation .navbar-inner .inner {
-  min-height: 90px;
+    min-height: 90px;
 }
 
 ul#main-menu li {
-  padding: 0;
-  font-size: 12px;
+    padding: 0;
+    font-size: 12px;
+}
+
+#highlighted .home{
+    color: black;
+    text-shadow: 1px 1px 1px #ffffff;
+}
+
+#footer {
+  background: #a6a6a6;
+  color: black;
+  border-top: 1px solid #377ca8;
+}
+
+.carousel#carousel-front {
+    margin: 0;
+    height: 375px;
+}
+.carousel#carousel-front .item img {
+    max-height: 350px;
+    width: 585px;
 }
