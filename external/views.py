@@ -27,3 +27,7 @@ def seaporte(request):
 
 def careers(request):
     return render(request, 'careers.html')
+
+
+def news(request):
+    return render(request, 'news.html')

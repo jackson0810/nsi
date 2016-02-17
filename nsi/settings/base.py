@@ -32,23 +32,13 @@ GENERIC_DATABASE_ERROR = "We're sorry, an error occurred. Please try your reques
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 86400
 
-#AUTH_USER_MODEL = 'security.CustomUser'
-#AUTHENTICATION_BACKENDS = ['security.backends.CustomUserAuthBackend',]
+AUTH_USER_MODEL = 'security.CustomUser'
+AUTHENTICATION_BACKENDS = ['security.backends.CustomUserAuthBackend',]
 
 # EMAIL_HOST = ''
 # APPLICATION_EMAIL = ''
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'uscnu)tfdo3n8#o-!g%bt6=6(0f^w0=-=7x-@#-0j2br=#2c%3'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -57,16 +47,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'suit',
-    #'impersonate',
+    'impersonate',
     #'stronghold',
 ]
 
 
 # Applications
 INSTALLED_APPS += [
-    'shared',
     'external',
     'internal',
+    'security',
+    'shared'
 ]
 MIDDLEWARE_CLASSES = [
     #'stronghold.middleware.LoginRequiredMiddleware',
@@ -78,7 +69,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'impersonate.middleware.ImpersonateMiddleware',
+    'impersonate.middleware.ImpersonateMiddleware',
 ]
 
 ROOT_URLCONF = 'nsi.urls'
@@ -101,23 +92,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nsi.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = []
-
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'America/New_York'
@@ -146,7 +124,7 @@ STRONGHOLD_DEFAULTS = False
 STRONGHOLD_PUBLIC_URLS = (
     r'^%s.+$' % STATIC_URL,
     r'^/__debug__/.+$',  # needed for django debug toolbar
-    #r'^/security/(.+)?$',
+    r'^/security/(.+)?$',
 )
 
 # DJANGO-IMPERSONATE

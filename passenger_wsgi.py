@@ -14,7 +14,7 @@ sys.path.insert(0,cwd+'/env/bin')
 sys.path.insert(0,cwd+'/env/lib/python2.7/site-packages/django')
 sys.path.insert(0,cwd+'/env/lib/python2.7/site-packages')
 
-os.environ['DJANGO_SETTINGS_MODULE'] = "nsi.settings"
+os.environ['DJANGO_SETTINGS_MODULE'] = "nsi.settings.production"
 
 from django.core.wsgi import get_wsgi_application
 

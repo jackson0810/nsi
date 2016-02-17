@@ -9,5 +9,6 @@ urlpatterns = patterns(
     url(r'^locations/china/lake/$', 'china_lake', name='china_lake'),
     url(r'^contract/vehicles/seaport-e/$', 'seaporte', name='seaporte'),
     url(r'^careers/$', 'careers', name='careers'),
+    url(r'^news/$', 'news', name='news'),
 )
 

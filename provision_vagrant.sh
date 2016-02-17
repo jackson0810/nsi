@@ -8,7 +8,11 @@ echo "Running apt-get update ..."
 apt-get update
 
 echo "Installing required Python and other packages ..."
-apt-get install -y build-essential unixodbc-dev unixodbc-bin unixodbc supervisor python3-pip python3-dev python-psycopg2 libldap2-dev libssl-dev libsasl2-dev libjpeg8-dev libjpeg62 libtiff4-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev libaio1 g++ nginx git wget curl vim zip unzip libpq-dev postgresql postgresql-contrib libmysqlclient-dev cifs-utils expect openssl cups python-cups hplip libcups2-dev xvfb
+apt-get install -y build-essential unixodbc-dev unixodbc-bin unixodbc supervisor python3-pip python3-dev python-psycopg2
+apt-get install -y libldap2-dev libssl-dev libsasl2-dev libjpeg8-dev libjpeg62 libtiff4-dev zlib1g-dev libfreetype6-dev
+apt-get install -y liblcms2-dev libwebp-dev libaio1 g++ nginx git wget curl vim zip unzip libpq-dev postgresql
+apt-get install -y postgresql-contrib libmysqlclient-dev cifs-utils expect openssl cups python-cups hplip libcups2-dev xvfb
+apt-get install -y libmysqlclient-dev mysql-server
 
 # Packages used for testing removed as the Firefox install takes forever, yes, forever in the office.
 # apt-get install-y firefox xserver-xephyr
