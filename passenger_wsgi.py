@@ -1,6 +1,7 @@
 import sys
 import os
 
+
 INTERP = "/home/nsishell/navalsystemsinc/env/bin/python"
 
 if sys.executable != INTERP:
@@ -17,5 +18,7 @@ sys.path.insert(0,cwd+'/env/lib/python2.7/site-packages')
 os.environ['DJANGO_SETTINGS_MODULE'] = "nsi.settings.production"
 
 from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
 
 application = get_wsgi_application()
+application = DjangoWhiteNoise(application)
