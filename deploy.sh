@@ -37,7 +37,7 @@ git pull
 echo
 
 echo "Collect static ..."
-${WORKDIR}${HOMEDIR}env/bin/python3 manage.py collectstatic --noinput --settings=nsi.settings > /dev/null 2>&1
+${WORKDIR}${HOMEDIR}env/bin/python3 manage.py collectstatic --noinput --settings=nsi.settings.production > /dev/null 2>&1
 
 echo "Installing requirements ..."
 ${WORKDIR}${HOMEDIR}env/bin/pip3 install -r requirements.txt
