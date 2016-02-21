@@ -27,9 +27,11 @@
                                 <li>
                                     <a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> About</a>
                                 </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> Functional Capabilities</a>
-                                </li>
+                                {% if func_capabilities %}
+                                    <li>
+                                        <a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> Functional Capabilities</a>
+                                    </li>
+                                {% endif %}
                                 <li>
                                     <a href="#quality"><i class="fa fa-chevron-right"></i> Quality Assurance Plan</a>
                                 </li>
@@ -121,46 +123,27 @@
                         <br>
 				        Our Seaport-e contract expires 04 April 2014.
 			        </p>
-                    <h3 class="block-title sub-title" id="functional">Functional Capabilities</h3>
-                    <div class="block">
-                        <!--accordion-->
-                        <div class="panel-group panel-primary" id="accordion2">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a class="panel-toggle" data-toggle="collapse" data-parent="#accordion2"
-                                       href="#collapseOne"> Research and Development Support</a>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        This functional area consists of supporting the development and application of scientific and analytical disciplines to conduct fundamental research; scientific study and experimentation directed toward advancing the state-of-the-art or increasing knowledge or understanding; concept formulation; assessment of system and subsystem requirements; development, analysis and evaluation of concepts, technologies, systems and subsystems; and development of operational concepts and tactics with the end goal being the application of results to developing new or improving existing warfighting capabilities. This effort may include manning, operating, and maintaining test support craft and experimental vessels in the open ocean or restricted waters to support tests.
+
+                    {% if func_capabilities %}
+                        <h3 class="block-title sub-title" id="functional">Functional Capabilities</h3>
+                        <div class="block">
+                            <div class="panel-group panel-primary" id="accordion2">
+                                {% for capability in func_capabilities %}
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <a class="panel-toggle" data-toggle="collapse" data-parent="#accordion2"
+                                               href="#collapseThree"> {{ capability.title }}</a>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse ">
+                                            <div class="panel-body">
+                                                {{ capability.text|safe }}
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a class="panel-toggle" data-toggle="collapse" data-parent="#accordion2"
-                                       href="#collapseThree"> Engineering, System Engineering and Process Engineering Support</a>
-                                </div>
-                                <div id="collapseThree" class="panel-collapse collapse ">
-                                    <div class="panel-body">
-                                        This functional area consists of supporting the application of engineering disciplines to technically support development of new and existing Naval capabilities and systems, technically support development of significant alterations to existing systems, support integration and interface of existing equipment or software into different applications or platforms to support the warfighter, and support evaluation of foreign or non-developmental systems, equipments, and technologies. This functional area also includes all support required within the area of environmental engineering of U. S. Navy weapon systems and base related infrastructure.
-                                    </div>
-                                </div>
-                            </div>
-                            <a id="quality"></a>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <a class="panel-toggle" data-toggle="collapse" data-parent="#accordion2"
-                                        href="#collapseTwo"> Modeling, Simulation, Stimulation, and Analysis Support</a>
-                                </div>
-                                <div id="collapseTwo" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        This functional area consists of the application of a standardized, rigorous, structured methodology to create and validate a physical, mathematical, or otherwise logical representation of a system, entity, phenomenon, or process. The functional area involves the use of models, including emulators, prototypes, simulators, and stimulators, either statically or over time, to develop data as a basis for making managerial, technical, strategic, or tactical decisions.
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
-                    </div>
+                    {% endif %}
                     <h3 class="block-title sub-title">Quality Assurance Plan</h3>
                     <p>
                         Quality is an inherent element of all services and products provided by Team NSI, and our management team continually strives for highly efficient, process driven methods for providing services that optimize product quality.
@@ -174,7 +157,6 @@
                             <li>Management;</li>
                             <li>Business relations</li>
                         </ul>
-                        <br>
                     </p>
                     <p>
                         The purpose of the Quality Assurance Plan (QAP) is twofold.  It allows management to assess the health of support for the individual contract and it provides an internal corporate assessment of workforce strength and motivation,

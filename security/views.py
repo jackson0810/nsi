@@ -15,8 +15,6 @@ from stockshared.views import random_password_generator
 
 from .backends import AuthenticationFailedException
 
-from impersonate.views import stop_impersonate
-
 User = get_user_model()
 
 
@@ -198,7 +196,3 @@ def reset_password(request, template_name='resetPassword.html'):
         form = ResetPasswordForm()
 
     return render(request, template_name, {'form': form})
-
-
-def impersonate_stop(request):
-    return stop_impersonate(request)

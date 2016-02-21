@@ -2,19 +2,14 @@
 
 WORKDIR="/home/nsishell/"
 HOMEDIR="navalsystemsinc/"
+HOMEDIR_EMPLOYEES="employees.navalsystemsinc.com/"
 PROJECT="nsi"
-GITURL="git@github.com:jackson0810/nsi.git"
-DOCROOT="/home/nsishell/nsi"
+DEPLOY_EXTERNAL='Y'
+DEPLOY_INTERNAL='Y'
 
 cd ${WORKDIR}${HOMEDIR}
 
-echo "Pulling from bitbucket (${GITURL}) and deploying..."
-
-if [ ! -d ${WORKDIR}${HOMEDIR}${PROJECT} ]; then
-    git clone ${GITURL}
-fi
-
-echo "Switching to the source directory"
+echo "Switching to the source directory for the external site..."
 cd ${WORKDIR}${HOMEDIR}${PROJECT}
 git pull
 echo
@@ -36,15 +31,56 @@ git checkout ${BRANCH_NAME}
 git pull
 echo
 
-echo "Collect static ..."
-${WORKDIR}${HOMEDIR}env/bin/python3 manage.py collectstatic --noinput --settings=nsi.settings.production
+echo "Do you want to deploy the external site: (Y/n)?  The default is Yes"
+read DEPLOY_EXTERNAL
 
-echo "Installing requirements ..."
-${WORKDIR}${HOMEDIR}env/bin/pip3 install -r requirements.txt
+echo "Do you ant to deploy the employees site: (Y/n)? The default is Yes"
+read DEPLOY_INTERNAL
 
-echo "Moving passenger script"
-cp passenger_wsgi.py ${WORKDIR}${HOMEDIR}
+if [ "${DEPLOY_EXTERNAL}" == "Y" ]; then
+    echo "About to deploy the external site..."
 
-touch ${WORKDIR}${HOMEDIR}tmp/restart.txt
+    echo "Collect static ..."
+    ${WORKDIR}${HOMEDIR}env/bin/python3 manage.py collectstatic --noinput --settings=nsi.settings.production
+
+    echo "Installing requirements ..."
+    ${WORKDIR}${HOMEDIR}env/bin/pip3 install -r requirements.txt
+
+    echo "Moving passenger script"
+    cp passenger_wsgi.py ${WORKDIR}${HOMEDIR}
+
+    echo "Restarting external site..."
+    touch ${WORKDIR}${HOMEDIR}tmp/restart.txt
+
+    echo "Finished deploying the external site..."
+fi
+
+if [ "${DEPLOY_INTERNAL}" == "Y" ]; then
+    echo "About to deploy the employees site..."
+
+    echo "Copying files to the employees site..."
+    rm -rf ${WORKDIR}${HOMEDIR_EMPLOYEES}${PROJECT}
+    mkdir ${WORKDIR}${HOMEDIR_EMPLOYEES}${PROJECT}
+    cp -r ${WORKDIR}/${HOMEDIR}/* ${WORKDIR}${HOMEDIR_EMPLOYEES}${PROJECT}
+    rm -rf ${WORKDIR}${HOMEDIR_EMPLOYEES}${PROJECT}/.git
+
+    echo "Removing the old passenger file..."
+    rm passenger_wsgi.py
+    mv employees_passenger_wsgi.py passenger_wsgi.py
+
+    echo "Collect static ..."
+    ${WORKDIR}${HOMEDIR_EMPLOYEES}env/bin/python3 manage.py collectstatic --noinput --settings=nsi.settings.production_employees
+
+    echo "Installing requirements ..."
+    ${WORKDIR}${HOMEDIR_EMPLOYEES}env/bin/pip3 install -r requirements.txt
+
+    echo "Moving passenger script"
+    cp passenger_wsgi.py ${WORKDIR}${HOMEDIR_EMPLOYEES}
+
+    echo "Restarting external site..."
+    touch ${WORKDIR}${HOMEDIR_EMPLOYEES}tmp/restart.txt
+
+    echo "Finished deploying the employee site..."
+fi
 
 echo "Done"

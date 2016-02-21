@@ -8,5 +8,4 @@ urlpatterns = patterns('security.views',
     url(r'^password/reset/$', 'reset_password', name='reset_password'),
     url(r'^password/create/{}/$'.format(settings.UUID_PATTERN_REGEX), 'create_new_password',
         name='create_new_password'),
-    url('^impersonate/stop/$', 'impersonate_stop', name="impersonate_stop"),
 )

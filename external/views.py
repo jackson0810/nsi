@@ -1,8 +1,13 @@
 from django.shortcuts import render
 
+from .models import NewsItem, FunctionalCapability, ImageItem
+
 
 def home(request):
-    return render(request, 'home.html')
+    latest_news = NewsItem.objects.filter(featured=True)
+    featured_images = ImageItem.objects.filter(featured=True)
+
+    return render(request, 'home.html', {'latest_news': latest_news, 'featured_images': featured_images})
 
 
 def about_us(request):
@@ -22,7 +27,9 @@ def china_lake(request):
 
 
 def seaporte(request):
-    return render(request, 'contract_vehicles/seaport-e.html')
+    func_capabilities = FunctionalCapability.objects.all()
+
+    return render(request, 'contract_vehicles/seaport-e.html', {'func_capabilities': func_capabilities})
 
 
 def careers(request):

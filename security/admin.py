@@ -4,9 +4,6 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.safestring import mark_safe
 
-from impersonate.views import impersonate
-from django_object_actions import DjangoObjectActions
-
 from .models import CustomUser
 from shared.utilities import random_password_generator
 
@@ -77,7 +74,7 @@ class UserChangeForm(forms.ModelForm):
         return self.initial['password']
 
 
-class CustomUserAdmin(DjangoObjectActions, UserAdmin):
+class CustomUserAdmin(UserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
 
@@ -99,14 +96,6 @@ class CustomUserAdmin(DjangoObjectActions, UserAdmin):
     )
     ordering = ('email',)
     filter_horizontal = ()
-
-    objectactions = ['impersonate_user_action', ]
-
-    def impersonate_user_action(self, request, obj):
-        return impersonate(request, obj.id)
-
-    impersonate_user_action.label = mark_safe(u'<i class="icon-user icon-alpha75"></i>Impersonate User')
-    impersonate_user_action.short_description = 'Impersonate User'
 
 
 admin.site.register(CustomUser, CustomUserAdmin)

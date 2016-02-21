@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'suit',
-    'impersonate',
     #'stronghold',
 ]
 
@@ -69,7 +68,6 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'impersonate.middleware.ImpersonateMiddleware',
 ]
 
 ROOT_URLCONF = 'nsi.urls'
@@ -103,9 +101,11 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.dirname(BASE_DIR) + '/public/static/'
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = STATIC_ROOT + 'img/'
+MEDIA_URL = '/static/img/'
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
@@ -125,9 +125,16 @@ STRONGHOLD_PUBLIC_URLS = (
     r'^/security/(.+)?$',
 )
 
-# DJANGO-IMPERSONATE
-IMPERSONATE_REDIRECT_FIELD_NAME = 'next'
-IMPERSONATE_REDIRECT_URL = '/'
-IMPERSONATE_REQUIRE_SUPERUSER = True
-IMPERSONATE_ALLOW_SUPERUSER = True
-IMPERSONATE_URI_EXCLUSIONS = [r'^/admin.+$', ]
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ['SECRET_KEY']
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ['DATABASE_NAME'],
+        'USER': os.environ['DATABASE_USER'],
+        'PASSWORD': os.environ['DATABASE_PASSWORD'],
+        'HOST': os.environ['DATABASE_SERVER'],
+        'PORT': '3306',
+    }
+}

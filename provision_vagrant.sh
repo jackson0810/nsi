@@ -4,18 +4,15 @@
 echo "Updating Time Zone to America/New_York"
 ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
 
-echo "Running apt-get update ..."
-apt-get update
+echo "Running apt-get update and upgrade..."
+apt-get -f install
+apt-get update && sudo apt-get upgrade
 
 echo "Installing required Python and other packages ..."
-apt-get install -y build-essential unixodbc-dev unixodbc-bin unixodbc supervisor python3-pip python3-dev python-psycopg2
+apt-get install -y build-essential unixodbc-dev unixodbc-bin unixodbc supervisor python3-pip python3-dev
 apt-get install -y libldap2-dev libssl-dev libsasl2-dev libjpeg8-dev libjpeg62 libtiff4-dev zlib1g-dev libfreetype6-dev
-apt-get install -y liblcms2-dev libwebp-dev libaio1 g++ nginx git wget curl vim zip unzip libpq-dev postgresql
-apt-get install -y postgresql-contrib libmysqlclient-dev cifs-utils expect openssl cups python-cups hplip libcups2-dev xvfb
-apt-get install -y libmysqlclient-dev mysql-server
-
-# Packages used for testing removed as the Firefox install takes forever, yes, forever in the office.
-# apt-get install-y firefox xserver-xephyr
+apt-get install -y liblcms2-dev libwebp-dev libaio1 g++ nginx git wget curl vim zip unzip libpq-dev
+apt-get install -y libmysqlclient-dev expect openssl
 
 if [ ! -f /vagrant/requirements_installed ]
 then
@@ -25,23 +22,6 @@ then
     touch requirements_installed
 fi
 
-if [ ! -f /vagrant/wkhtmltopdf_installed ]
-then
-  echo "Installing tools for PDF generation ..."
-  su - root
-  apt-get install -y xfonts-75dpi
-  wget http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
-  sudo dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
-  echo -e '#!/bin/bash\nxvfb-run -a --server-args="-screen 0, 1024x768x24" /usr/bin/wkhtmltopdf $*' > /usr/bin/wkhtmltopdf.sh
-  chmod a+x /usr/bin/wkhtmltopdf.sh
-  ln -s /usr/bin/wkhtmltopdf.sh /usr/local/bin/wkhtmltopdf
-  rm wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
-  cd /vagrant  
-  touch wkhtmltopdf_installed
-  echo "Exiting from the root account..."
-  sudo su - vagrant
-fi
-
 echo "Installing and upgrading pip and distribute..."
 /usr/bin/pip3 install -U distribute
 /usr/bin/pip3 install -U pip
@@ -49,6 +29,12 @@ echo "Installing and upgrading pip and distribute..."
 echo "Create en_US locale..."
 locale-gen en_US
 dpkg-reconfigure locales
+
+#export SECRET_KEY='(@7o_g@c)+^$m^*802p5fd@vbe=wpw$j6u_hf^3-5=u+n%6cpx'
+#export DATABASE_NAME='nsilocal'
+#export DATABASE_USER='nsilocal'
+#export DATABASE_PASSWORD='yOmk%ix5KWy^ISlGl!4'
+#export DATABASE_SERVER='localhost'
 
 echo "Provisioning complete."
 
