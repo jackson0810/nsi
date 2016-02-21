@@ -61,7 +61,7 @@ if [ "${DEPLOY_INTERNAL}" == "Y" ]; then
     echo "Copying files to the employees site..."
     rm -rf ${WORKDIR}${HOMEDIR_EMPLOYEES}${PROJECT}
     mkdir ${WORKDIR}${HOMEDIR_EMPLOYEES}${PROJECT}
-    cp -r ${WORKDIR}/${HOMEDIR}/* ${WORKDIR}${HOMEDIR_EMPLOYEES}${PROJECT}
+    cp -r ${WORKDIR}/${HOMEDIR}${PROJECT}/* ${WORKDIR}${HOMEDIR_EMPLOYEES}${PROJECT}
     rm -rf ${WORKDIR}${HOMEDIR_EMPLOYEES}${PROJECT}/.git
 
     echo "Removing the old passenger file..."
