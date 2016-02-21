@@ -12,8 +12,8 @@ sys.path.append(cwd)
 sys.path.append(cwd + '/nsi')
 
 sys.path.insert(0, cwd + '/env/bin')
-sys.path.insert(0, cwd + '/env/lib/python3.5/site-packages/django')
-sys.path.insert(0, cwd + '/env/lib/python3.5/site-packages')
+# sys.path.insert(0, cwd + '/env/lib/python3.5/site-packages/django')
+# sys.path.insert(0, cwd + '/env/lib/python3.5/site-packages')
 
 os.environ['DJANGO_SETTINGS_MODULE'] = "nsi.settings.production"
 
