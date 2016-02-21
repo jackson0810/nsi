@@ -69,10 +69,10 @@ if [ "${DEPLOY_INTERNAL}" == "Y" ]; then
     mv employees_passenger_wsgi.py passenger_wsgi.py
 
     echo "Collect static ..."
-    ${WORKDIR}${HOMEDIR_EMPLOYEES}env/bin/python manage.py collectstatic --noinput --settings=nsi.settings.production_employees
+    ${WORKDIR}${HOMEDIR_EMPLOYEES}env/bin/python3 manage.py collectstatic --noinput --settings=nsi.settings.production_employees
 
     echo "Installing requirements ..."
-    ${WORKDIR}${HOMEDIR_EMPLOYEES}env/bin/pip install -r requirements.txt
+    ${WORKDIR}${HOMEDIR_EMPLOYEES}env/bin/pip3 install -r requirements.txt
 
     echo "Moving passenger script"
     cp passenger_wsgi.py ${WORKDIR}${HOMEDIR_EMPLOYEES}
