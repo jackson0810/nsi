@@ -3,7 +3,7 @@ from django.conf import settings
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^', include('{}.urls'.format(settings.URL_HOME)), namespace=settings.URL_HOME_NAME),
+    url(r'^', include('{}.urls'.format(settings.URL_HOME), namespace=settings.URL_HOME_NAME)),
 
     url(r'^admin/', admin.site.urls),
 
