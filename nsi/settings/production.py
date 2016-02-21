@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['navalsystemsinc.com']
 URL_HOME = 'external'
 URL_HOME_NAME = 'external'
