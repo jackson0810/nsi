@@ -17,8 +17,10 @@ sys.path.insert(0, cwd + '/env/bin')
 
 os.environ['DJANGO_SETTINGS_MODULE'] = "nsi.settings.production_employees"
 
+from paste.exceptions.errormiddleware import ErrorMiddleware
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
 
 application = get_wsgi_application()
 application = DjangoWhiteNoise(application)
+application = ErrorMiddleware(application, debug=True)
