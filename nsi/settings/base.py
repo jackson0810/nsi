@@ -54,7 +54,6 @@ INSTALLED_APPS = [
 # Applications
 INSTALLED_APPS += [
     'external',
-    'internal',
     'security',
     'shared'
 ]
