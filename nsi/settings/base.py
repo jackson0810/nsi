@@ -33,7 +33,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 86400
 
 AUTH_USER_MODEL = 'security.CustomUser'
-AUTHENTICATION_BACKENDS = ['security.backends.CustomUserAuthBackend',]
+AUTHENTICATION_BACKENDS = ['security.backends.CustomUserAuthBackend', ]
 
 # EMAIL_HOST = ''
 # APPLICATION_EMAIL = ''
@@ -47,9 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'suit',
-    #'stronghold',
 ]
-
 
 # Applications
 INSTALLED_APPS += [
@@ -58,7 +56,6 @@ INSTALLED_APPS += [
     'shared'
 ]
 MIDDLEWARE_CLASSES = [
-    #'stronghold.middleware.LoginRequiredMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -114,14 +111,6 @@ MEDIA_URL = '/static/img/'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
-
-# DJANGO-STRONGHOLD
-STRONGHOLD_DEFAULTS = False
-STRONGHOLD_PUBLIC_URLS = (
-    r'^%s.+$' % STATIC_URL,
-    r'^/__debug__/.+$',  # needed for django debug toolbar
-    r'^/security/(.+)?$',
 )
 
 DATABASES = {
