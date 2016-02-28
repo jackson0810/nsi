@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import NewsItem, FunctionalCapability, ImageItem
+from shared.models import NewsItem, FunctionalCapability, ImageItem
 
 
 def home(request):

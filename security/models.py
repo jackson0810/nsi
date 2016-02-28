@@ -1,8 +1,9 @@
 from uuid import uuid4
 
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
-from django.db.models import Q
+
+from shared.utilities import make_uuid
 
 
 class CustomUserManager(BaseUserManager):
@@ -33,10 +34,13 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser):
-    ACCOUNT_TYPES = [(1, 'Administrator'), (2, 'General User'), (3, 'News Admin')]
-
     username = models.CharField(max_length=250, blank=True, null=True, verbose_name='User Name')
-    account_type = models.IntegerField(choices=ACCOUNT_TYPES)
+    user_uuid = models.CharField(max_length=36, default=make_uuid, db_index=True)
+    account_type = models.IntegerField()
+    first_name = models.CharField(max_length=100, verbose_name='First Name')
+    last_name = models.CharField(max_length=100, verbose_name='Last Name')
+    office_phone = models.CharField(max_length=14, null=True, blank=True, verbose_name='office phone')
+    mobile_phone = models.CharField(max_length=14, null=True, blank=True, verbose_name='mobile phone')
     email = models.EmailField(max_length=250, unique=True, db_index=True)
     password_reset = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False, verbose_name='Is Active')
@@ -52,8 +56,14 @@ class CustomUser(AbstractBaseUser):
     REQUIRED_FIELDS = ['account_type']
 
     @property
+    def get_account_type_string(self):
+        at = self.account_type
+
+        return 'Administrator' if at == 1 else 'General User'
+
+    @property
     def get_full_name(self):
-        return self.email
+        return '{} {}'.format(self.first_name, self.last_name)
 
     @property
     def get_short_name(self):
