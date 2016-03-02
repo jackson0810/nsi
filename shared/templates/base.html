@@ -101,7 +101,19 @@
             </div>
         </div>
 
-        {% block content %}{% endblock %}
+        <div>
+            {% block content_highlight %}{% endblock %}
+            <div id="content">
+                <div class="container">
+                    <!--Message Block-->
+                    {% include 'includes/message_block.html' %}
+                    <!--End Message Block-->
+                    {% block content %}{% endblock %}
+                    <div class="push"></div>
+                </div>
+            </div>
+
+        </div>
 
         <!-- ======== @Region: #footer ======== -->
         <footer id="footer">
