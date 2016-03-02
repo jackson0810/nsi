@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load html_attributes %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+    <!-- ======== @Region: #highlighted ======== -->
+    <div id="highlighted">
+        <div class="container">
+            <div class="header">
+                <h2 class="page-title">
+                    <span>Contact Us</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======== @Region: #content ======== -->
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="block">
+                        <form action="" method="POST">
+                            <div class="form-group{% if form.name.errors  %} has-error{% endif %}">
+                                {% if form.name.errors %}
+                                    <label class="control-label" for="{{ form.name.auto_id }}">
+                                        <i class="fa fa-exclamation-triangle"></i> Name is required.
+                                    </label><br>
+                                {% endif %}
+                                {{ form.name|htmlattributes:"class: form-control, placeholder:Name" }}
+                            </div>
+                            <div class="form-group{% if form.email.errors  %} has-error{% endif %}">
+                                {% if form.email.errors %}
+                                    <label class="control-label" for="{{ form.email.auto_id }}">
+                                        <i class="fa fa-exclamation-triangle"></i> Email is required.
+                                    </label><br>
+                                {% endif %}
+                                {{ form.email|htmlattributes:"class: form-control, placeholder:Email" }}
+                            </div>
+                            <div class="form-group{% if form.message.errors  %} has-error{% endif %}">
+                                {% if form.message.errors %}
+                                    <label class="control-label" for="{{ form.message.auto_id }}">
+                                        <i class="fa fa-exclamation-triangle"></i> Message is required.
+                                    </label><br>
+                                {% endif %}
+                                {{ form.message|htmlattributes:"class: form-control, placeholder:Message" }}
+                            </div>
+                            <div class="form-group{% if form.category.errors  %} has-error{% endif %}">
+                                {% if form.category.errors %}
+                                    <label class="control-label" for="{{ form.category.auto_id }}">
+                                        <i class="fa fa-exclamation-triangle"></i> Category is required.
+                                    </label><br>
+                                {% endif %}
+                                {{ form.category|htmlattributes:"class: form-control, placeholder:Category" }}
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                            {% csrf_token %}
+                        </form>
+                    </div>
+                </div>
+
+                <!-- sidebar -->
+                <div class="col-md-4 sidebar sidebar-right">
+                    <div class="inner">
+                        <div class="block">
+                            <h3 class="block-title sub-title">
+                                <span>Other Ways to Get in Touch</span>
+                            </h3>
+
+                        </div>
+                        <div class="block mdrs">
+                            <div class="panel-group panel-primary" id="accordion2">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <strong>Corporate Headquarters</strong><br/>
+                                        Director of Corporate Operations<br/>
+                                        Naval Systems, Inc. (NSI)<br/>
+                                        21491 Great Mills Road, Suite 100<br/>
+                                        Lexington Park, MD 20653<br/>
+                                        <i class="fa fa-phone"></i> 301.737.1911<br/>
+                                        <i class="fa fa-fax"></i> 301.737.1940<br/>
+                                        <a href="https://www.google.com/maps/place/21491+Great+Mills+Rd+%23100,+Lexington+Park,+MD+20653/@38.258248,-76.4748567,17z/data=!3m1!4b1!4m2!3m1!1s0x89b761c40e420ccd:0x13068008ab9ec9db" target="_blank">
+                                          Directions
+                                        </a>
+                                    </div>
+
+                                    <div class="panel-heading">
+                                        <strong>Contracts Point of Contacts</strong><br/>
+                                        Diana Waldorf<br/>
+                                        Director, Corporate Operations)<br/>
+                                        <i class="fa fa-phone"></i> 301.737.1911<br/>
+                                        <i class="fa fa-envelope-o"></i> dwaldorf@n-s-i.us
+                                    </div>
+
+                                    <div class="panel-heading">
+                                        <strong>Technical Points of Contact</strong><br/>
+                                        Gadsden 'Ed' Rule<br/>
+                                        President<br/>
+                                        <i class="fa fa-phone"></i> 301.919.1272<br/>
+                                        <i class="fa fa-envelope-o"></i> erule@n-s-i.us
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

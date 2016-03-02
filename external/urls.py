@@ -10,5 +10,5 @@ urlpatterns = patterns(
     url(r'^contract/vehicles/seaport-e/$', 'seaporte', name='seaporte'),
     url(r'^careers/$', 'careers', name='careers'),
     url(r'^news/$', 'news', name='news'),
+    url(r'^contact/$', 'contact', name='contact')
 )
-

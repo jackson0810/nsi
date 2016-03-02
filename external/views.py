@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.conf import settings
 
-from shared.models import NewsItem, FunctionalCapability, ImageItem
+from external.forms import ContactItemForm
+from shared.models import NewsItem, FunctionalCapability, ImageItem, ContactItem
 
 
 def home(request):
@@ -44,3 +47,20 @@ def news(request):
     new_items = NewsItem.objects.filter(is_active=True)
 
     return render(request, 'news.html', {'news_items': new_items})
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactItemForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+            messages.success(request, 'Your information was submitted.')
+            return redirect('external:contact')
+        else:
+            messages.error(request, settings.GENERIC_ERROR)
+    else:
+        form = ContactItemForm()
+
+    return render(request, 'contact.html', {'form': form})
