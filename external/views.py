@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from external.forms import ContactItemForm
-from shared.models import NewsItem, FunctionalCapability, ImageItem, ContactItem
+from shared.models import NewsItem, FunctionalCapability, ImageItem, ContactItem, TaskOrder
 
 
 def home(request):
@@ -31,12 +31,12 @@ def china_lake(request):
 
 def seaporte(request):
     func_capabilities = FunctionalCapability.objects.filter(is_active=True)
-    func_values_list = func_capabilities.values_list('id', flat=True)
+    task_orders = TaskOrder.objects.filter(is_active=True).values_list('id', flat=True)
 
-    odd_items = func_capabilities.filter(id__in=[x for x in func_values_list if not x % 2 == 0])
-    even_items = func_capabilities.filter(id__in=[x for x in func_values_list if x % 2 == 0])
+    odd_items = TaskOrder.objects.filter(id__in=[x for x in task_orders if not x % 2 == 0])
+    even_items = TaskOrder.objects.filter(id__in=[x for x in task_orders if x % 2 == 0])
 
-    return render(request, 'contract_vehicles/seaport-e.html', {'odd_items': odd_items, 'even_items': even_items})
+    return render(request, 'contract_vehicles/seaport-e.html', {'func_capabilities': func_capabilities, 'odd_items': odd_items, 'even_items': even_items})
 
 
 def careers(request):

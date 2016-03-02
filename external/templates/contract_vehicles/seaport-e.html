@@ -52,14 +52,14 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <ul class="list-unstyled shaded-glyph">
-                                                    {% for item in even_items %}
+                                                    {% for item in odd_items %}
                                                         <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="{% static 'documents/' %}{{ item.get_document_name }}" target="_blank">{{ item.task_number }}</a></li>
                                                     {% endfor %}
                                                 </ul>
                                             </div>
                                             <div class="col-sm-6">
                                                 <ul class="list-unstyled shaded-glyph">
-                                                    {% for item in odd_items %}
+                                                    {% for item in even_items %}
                                                         <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="{% static 'documents/' %}{{ item.get_document_name }}">{{ item.task_number }}</a></li>
                                                     {% endfor %}
                                                 </ul>
