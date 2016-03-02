@@ -51,22 +51,16 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <ul class="list-unstyled shaded-glyph">
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M801_mod_1.pdf" target="_blank">M801</a></li>
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M803.pdf">M803</a></li>
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M805_mod_23.pdf">M805</a></li>
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M807_mod_13.pdf">M807</a></li>
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M809_mod_14.pdf">M809</a></li>
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M811_mod_2.pdf">M811</a></li>
+                                                    {% for item in even_items %}
+                                                        <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="{% static 'documents/' %}{{ item.get_document_name }}" target="_blank">{{ item.task_number }}</a></li>
+                                                    {% endfor %}
                                                 </ul>
                                             </div>
                                             <div class="col-sm-6">
                                                 <ul class="list-unstyled shaded-glyph">
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M802.pdf">M802</a></li>
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M804.pdf">M804</a></li>
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M806_mod_5.pdf">M806</a></li>
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M808.pdf">M808</a></li>
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M810_mod_9.pdf">M810</a></li>
-                                                    <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="/views/documents/M812_mod_3.pdf">M812</a></li>
+                                                    {% for item in odd_items %}
+                                                        <li><i class="glyphicon glyphicon-chevron-right text-info"></i> <a href="{% static 'documents/' %}{{ item.get_document_name }}">{{ item.task_number }}</a></li>
+                                                    {% endfor %}
                                                 </ul>
                                             </div>
                                         </div>

@@ -148,3 +148,7 @@ ul.shaded-glyph li i.glyphicon {
   vertical-align: top;
   white-space: nowrap;
 }
+
+img.about_us_img {
+    padding-right: 10px;
+}

@@ -27,9 +27,13 @@ def china_lake(request):
 
 
 def seaporte(request):
-    func_capabilities = FunctionalCapability.objects.all()
+    func_capabilities = FunctionalCapability.objects.filter(is_active=True)
+    func_values_list = func_capabilities.values_list('id', flat=True)
 
-    return render(request, 'contract_vehicles/seaport-e.html', {'func_capabilities': func_capabilities})
+    odd_items = func_capabilities.filter(id__in=[x for x in func_values_list if not x % 2 == 0])
+    even_items = func_capabilities.filter(id__in=[x for x in func_values_list if x % 2 == 0])
+
+    return render(request, 'contract_vehicles/seaport-e.html', {'odd_items': odd_items, 'even_items': even_items})
 
 
 def careers(request):
@@ -37,4 +41,6 @@ def careers(request):
 
 
 def news(request):
-    return render(request, 'news.html')
+    new_items = NewsItem.objects.filter(is_active=True)
+
+    return render(request, 'news.html', {'news_items': new_items})

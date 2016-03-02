@@ -25,7 +25,7 @@
                     <div class="col-sm-6">
                         <div class="header">
                             <h2 class="page-title">
-                                <span>Quality, Integrity, Teamwork and Success</span>
+                                <span>Quality, Integrity and Victory</span>
                             </h2>
                         </div>
                         <p class="home">
@@ -49,19 +49,19 @@
                         </p>
                     </div>
                     <div class="col-sm-6">
-                        <div id="carousel-front" class="carousel slide carousel-featured" data-ride="carousel">
+                        <div id="carousel-front" class="carousel slide carousel-featured" data-ride="carousel" data-interval="4000">
                             <div class="carousel-inner">
                                 {% for featured_image in featured_images %}
-                                    <div class="item{% if forloop.first %}active{% endif %}">
+                                    <div class="item{% if forloop.first %} active{% endif %}">
                                         <div class="row">
                                             <div class="col-sm-12 pull-center animated fadeInUpBig">
-                                                <img src="{% static 'img/slides/uss_harry_truman.jpg' %}"
+                                                <img src="{% static 'img/slides/' %}{{ featured_image.get_image_name }}"
                                                      alt="{{ featured_image.title|striptags }}" />
-                                                <h4 class="carousel-caption">
-                                                    {{ featured_image.title }}
-                                                    <small> {{ featured_image.text|safe }} </small>
-                                                </h4>
                                             </div>
+                                            <h4 class="carousel-caption">
+                                                {{ featured_image.title }}
+                                                <small>{{ featured_image.text|safe|striptags }}</small>
+                                            </h4>
                                         </div>
                                     </div>
                                 {% empty %}
@@ -86,12 +86,12 @@
                                     </div>
                                 {% endfor %}
                             </div>
-                            {% if featured_images %}
-                                <a class="left carousel-control carousel-control-rounded carousel-control-small"
-                                   href="#carousel-front" data-slide="prev">‹</a>
-                                <a class="right carousel-control carousel-control-rounded carousel-control-small"
-                                   href="#carousel-front" data-slide="next">›</a>
-                            {% endif %}
+{#                            {% if featured_images %}#}
+{#                                <a class="left carousel-control carousel-control-rounded carousel-control-small"#}
+{#                                   href="#carousel-front" data-slide="prev">‹</a>#}
+{#                                <a class="right carousel-control carousel-control-rounded carousel-control-small"#}
+{#                                   href="#carousel-front" data-slide="next">›</a>#}
+{#                            {% endif %}#}
                         </div>
                     </div>
                 </div>
