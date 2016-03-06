@@ -19,12 +19,16 @@
     <!-- ======== @Region: #content ======== -->
     <div class="row">
         <!--Blog Roll Content-->
-        <div class="col-md-8 blog-list">
+        <div class="col-md-9 blog-list">
             <!-- New Item -->
             {% for item in news_items %}
                 <div class="media row">
                     <div class="col-sm-12">
                         <div class="media-body">
+                            <h4 class="title media-heading">
+                                {{ item.title }}
+                            </h4>
+                            <p>{{ item.text|safe }}</p>
                             <!-- Meta details -->
                             <ul class="list-inline meta text-muted">
                               <li>
@@ -32,10 +36,6 @@
                                   <span class="visible-md-inline visible-lg-inline">Created:</span> {{ item.dt_updated|date:"n/d/Y" }}
                               </li>
                             </ul>
-                            <h4 class="title media-heading">
-                                {{ item.title }}
-                            </h4>
-                            <p>{{ item.text|safe }}</p>
                         </div>
                     </div>
                 </div>
@@ -48,6 +48,20 @@
                     </div>
                 </div>
             {% endfor %}
+        </div>
+        <div class="col-md-3 sidebar sidebar-right">
+            <div class="inner">
+                <div class="block">
+                    <h3 class="block-title sub-title">
+                        <span>Archive</span>
+                    </h3>
+                    <ul class="big-list tags">
+                        {% for item in news_data %}
+                            <li><a href="{% url 'external:news' item.year %}">{{ item.year }}</a> ({{ item.count }})</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

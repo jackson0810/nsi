@@ -12,6 +12,7 @@ urlpatterns = patterns(
     url(r'^contract/vehicles/seaport-e/$', 'seaporte', name='seaporte'),
     url(r'^careers/$', 'careers', name='careers'),
     url(r'^news/$', 'news', name='news'),
+    url(r'^news/(\d+)/$', 'news', name='news'),
     url(r'^contact/$', 'contact', name='contact'),
 
     # url(r'^404/$', TemplateView.as_view(template_name='404.html',)),
