@@ -1,4 +1,6 @@
 from django.conf.urls import patterns, url
+from django.views.generic import TemplateView
+
 
 urlpatterns = patterns(
     'external.views',
@@ -10,5 +12,8 @@ urlpatterns = patterns(
     url(r'^contract/vehicles/seaport-e/$', 'seaporte', name='seaporte'),
     url(r'^careers/$', 'careers', name='careers'),
     url(r'^news/$', 'news', name='news'),
-    url(r'^contact/$', 'contact', name='contact')
+    url(r'^contact/$', 'contact', name='contact'),
+
+    # url(r'^404/$', TemplateView.as_view(template_name='404.html',)),
+    # url(r'^500/$', TemplateView.as_view(template_name='500.html',)),
 )
