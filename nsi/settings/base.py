@@ -139,7 +139,7 @@ def ignore_404_errors(record):
 
     return True
 
-LOG_PATH = '/home/nsishell/logs/navalsystemsinc.com/'
+LOG_PATH = '/home/nsishell/navalsystemsinc/logs/'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
