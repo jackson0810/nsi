@@ -35,8 +35,12 @@ SESSION_COOKIE_AGE = 86400
 AUTH_USER_MODEL = 'security.CustomUser'
 AUTHENTICATION_BACKENDS = ['security.backends.CustomUserAuthBackend', ]
 
-# EMAIL_HOST = ''
-# APPLICATION_EMAIL = ''
+EMAIL_HOST = 'mail.navalsystemsinc.com'
+APPLICATION_EMAIL = 'admin@navalsystemsinc.com'
+ADMINS = (('Admin', 'admin@updatednavalsystemsinc.com'), )
+EMAIL_HOST_USER = APPLICATION_EMAIL
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+SERVER_EMAIL = APPLICATION_EMAIL
 
 # Application definition
 INSTALLED_APPS = [

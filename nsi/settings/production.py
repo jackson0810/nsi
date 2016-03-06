@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['navalsystemsinc.com']
 
 # SECURITY WARNING: keep the secret key used in production secret!
