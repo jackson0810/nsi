@@ -30,6 +30,13 @@ echo "Create en_US locale..."
 locale-gen en_US
 dpkg-reconfigure locales
 
+if [ ! -d /var/log/nsi ]
+then
+    echo "Creating directory /var/log/nsi ..."
+    mkdir /var/log/nsi
+    chmod -R 777 /var/log/nsi
+fi
+
 #export SECRET_KEY='(@7o_g@c)+^$m^*802p5fd@vbe=wpw$j6u_hf^3-5=u+n%6cpx'
 #export DATABASE_NAME='nsilocal'
 #export DATABASE_USER='nsilocal'
