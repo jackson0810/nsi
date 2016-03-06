@@ -101,19 +101,22 @@
             </div>
         </div>
 
-        <div>
-            {% block content_highlight %}{% endblock %}
-            <div id="content">
-                <div class="container">
-                    <!--Message Block-->
-                    {% include 'includes/message_block.html' %}
-                    <!--End Message Block-->
-                    {% block content %}{% endblock %}
-                    <div class="push"></div>
+        {% if not current_url_name == 'home' %}
+            <div>
+                {% block content_highlight %}{% endblock %}
+                <div id="content">
+                    <div class="container">
+                        <!--Message Block-->
+                        {% include 'includes/message_block.html' %}
+                        <!--End Message Block-->
+                        {% block content %}{% endblock %}
+                        <div class="push"></div>
+                    </div>
                 </div>
             </div>
-
-        </div>
+        {% else %}
+            {% block content_home %}{% endblock %}
+        {% endif %}
 
         <!-- ======== @Region: #footer ======== -->
         <footer id="footer">
