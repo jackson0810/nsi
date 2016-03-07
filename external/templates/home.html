@@ -8,7 +8,7 @@
             <div class="bn-title"><h2>Latest News</h2><span></span></div>
             <ul>
                 {% for news_item in latest_news %}
-                    <li><a href="#"><span>{{ news_item.title }}</span></a></li>
+                    <li><a href="{% url 'external:news_item' news_item.news_uuid %}"><span>{{ news_item.title }}</span></a></li>
                 {% endfor %}
             </ul>
             <div class="bn-navi">

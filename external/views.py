@@ -31,6 +31,14 @@ def china_lake(request):
     return render(request, 'locations/china_lake.html')
 
 
+def jacksonville(request):
+    return render(request, 'locations/jacksonville.html')
+
+
+def patuxent_river(request):
+    return render(request, 'locations/patuxent_river.html')
+
+
 def seaporte(request):
     func_capabilities = FunctionalCapability.objects.filter(is_active=True)
     task_orders = TaskOrder.objects.filter(is_active=True).values_list('id', flat=True)
@@ -64,6 +72,27 @@ def news(request, news_year=datetime.today().year):
     new_items = new_items.filter(news_year=news_year)
 
     return render(request, 'news.html', {'news_items': new_items, 'news_data': news_data, 'news_year': new_years})
+
+
+def news_item(request, news_uuid):
+    new_items = NewsItem.objects.filter(is_active=True)
+    new_years = sorted(list(set(new_items.values_list('news_year', flat=True))), reverse=True)
+
+    news_data = []
+
+    for item in new_years:
+        temp_data = new_items.filter(news_year=item)
+
+        temp = {
+            'year': item,
+            'count': temp_data.count()
+        }
+
+        news_data.append(temp)
+
+    item = NewsItem.objects.filter(news_uuid=news_uuid)
+
+    return render(request, 'news.html', {'news_items': item, 'news_data': news_data})
 
 
 def contact(request):
