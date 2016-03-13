@@ -43,3 +43,6 @@ def random_password_generator(size=10, chars=string.ascii_uppercase + string.asc
 
 def collect_static():
     call_command('collectstatic', verbosity=2, interactive=False)
+
+    with open("/home/nsishell/navalsystemsinc/tmp/restart.txt", "w") as f:
+        f.write("")
