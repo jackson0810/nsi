@@ -1,9 +1,15 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from django.contrib import messages
 
 from shared.utilities import collect_static
 
 
 def update_static_resources(request):
-    collect_static()
+    try:
+        collect_static()
 
-    return HttpResponse(status=200)
+        messages.success(request, 'The Collect Static script ran successfully')
+    except Exception as e:
+        messages.error(request, 'Something happened: {}'.format(e))
+
+    return render(request, 'collect_static.html')
