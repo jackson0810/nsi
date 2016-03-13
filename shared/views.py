@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+from shared.utilities import collect_static
+
+
+def update_static_resources(request):
+    collect_static()
+
+    return HttpResponse(status=200)
