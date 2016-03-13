@@ -22,24 +22,6 @@
         <div class="col-sm-3 sidebar sidebar-left">
             <div class="inner">
                 <div class="block">
-                    <ul class="nav nav-list secondary-nav">
-                        <li>
-                            <a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> About</a>
-                        </li>
-                        {% if func_capabilities %}
-                            <li>
-                                <a href="javascript:void(0);"><i class="fa fa-chevron-right"></i> Functional Capabilities</a>
-                            </li>
-                        {% endif %}
-                        <li>
-                            <a href="#quality"><i class="fa fa-chevron-right"></i> Quality Assurance Plan</a>
-                        </li>
-                        <li>
-                            <a href="http://www.seaport.navy.mil/Home.aspx" target="_blank"><i class="fa fa-chevron-right"></i> SeaPort-e Website</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="block">
                     <h3 class="block-title sub-title">
                         <span><i class="fa fa-file-pdf-o"></i> Awarded Task Orders</span>
                     </h3>
@@ -65,6 +47,14 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="panel-group panel-primary">
+                        <ul class="nav nav-list secondary-nav">
+                            <li>
+                                <a href="http://www.seaport.navy.mil/Home.aspx" target="_blank"><i class="fa fa-chevron-right"></i> SeaPort-e Website</a>
+                            </li>
+                        </ul>
                     </div>
 
                     <h3 class="block-title sub-title">
@@ -98,7 +88,7 @@
         </div>
         <!--Content Area-->
         <div class="col-sm-9">
-            <h3 class="block-title sub-title">About</h3>
+            <h3 class="block-title sub-title" id="about">About</h3>
             <p>
                 In May 2005, NSI was awarded Seaport-e prime contract, Number N00178-05-D-4466, and in February 2014 was awarded SeaPort-e prime contract, Number N00178-14-D-7851.  Under the Seaport-e contract, NSI provides world class professional support services for
                 all Navy/Marine Corps Systems Command Program Executive Offices, Directorates and field activities.  The following size status classifications apply to NSI under this contract:
@@ -136,7 +126,7 @@
                     </div>
                 </div>
             {% endif %}
-            <h3 class="block-title sub-title">Quality Assurance Plan</h3>
+            <h3 class="block-title sub-title" id="quality">Quality Assurance Plan</h3>
             <p>
                 Quality is an inherent element of all services and products provided by Team NSI, and our management team continually strives for highly efficient, process driven methods for providing services that optimize product quality.
             </p>
