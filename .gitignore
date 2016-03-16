@@ -5,3 +5,5 @@ requirements_installed
 .htaccess
 .DS_Store
 wkhtmltopdf_installed
+shared/static/forms/
+shared/static/documents
