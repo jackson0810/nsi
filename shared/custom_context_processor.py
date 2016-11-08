@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.urlresolvers import resolve, Resolver404
 
 
@@ -19,4 +20,5 @@ def custom_proc(request):
         # Makes the URL name available so it can be used to determine which navigation item should be active.
         'current_url_name': current_url_name,
         'current_url_namespace': current_url_namespace,
+        'EMPLOYEE_URL': settings.EMPLOYEE_URL
     }

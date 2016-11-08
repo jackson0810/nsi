@@ -17,8 +17,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DJANGO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_ROOT = os.path.dirname(DJANGO_ROOT)
 SITE_NAME = os.path.basename(DJANGO_ROOT)
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
+LOGIN_URL = 'security:login'
+LOGOUT_URL = 'security:logout'
 
 # two hours
 TEMP_PASSWORD_EXPIRES = 2
@@ -50,12 +50,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'suit',
+    'django.contrib.sites',
+    'sorl.thumbnail',
 ]
 
 # Applications
 INSTALLED_APPS += [
     'external',
+    'nsi',
     'security',
     'shared'
 ]
@@ -70,12 +72,12 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SITE_ID = 1
 ROOT_URLCONF = 'nsi.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,14 +104,11 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-STATIC_ROOT = os.path.dirname(BASE_DIR) + '/public/static/'
+STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'public/static'))
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = STATIC_ROOT + 'img/'
-MEDIA_URL = '/static/img/'
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
+MEDIA_URL = '/media/'
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -117,6 +116,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+EMPLOYEE_URL = 'https://employess.navalsystemsinc.com'
 
 def ignore_404_errors(record):
     if record.getMessage():

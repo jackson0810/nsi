@@ -12,7 +12,7 @@ echo "Installing required Python and other packages ..."
 apt-get install -y build-essential unixodbc-dev unixodbc-bin unixodbc supervisor python3-pip python3-dev
 apt-get install -y libldap2-dev libssl-dev libsasl2-dev libjpeg8-dev libjpeg62 libtiff4-dev zlib1g-dev libfreetype6-dev
 apt-get install -y liblcms2-dev libwebp-dev libaio1 g++ nginx git wget curl vim zip unzip libpq-dev
-apt-get install -y libmysqlclient-dev expect openssl
+apt-get install -y libmysqlclient-dev expect openssl mysql-server mysql_secure_installation mysql_install_db
 
 if [ ! -f /vagrant/requirements_installed ]
 then
@@ -36,12 +36,6 @@ then
     mkdir /var/log/nsi
     chmod -R 777 /var/log/nsi
 fi
-
-#export SECRET_KEY='(@7o_g@c)+^$m^*802p5fd@vbe=wpw$j6u_hf^3-5=u+n%6cpx'
-#export DATABASE_NAME='nsilocal'
-#export DATABASE_USER='nsilocal'
-#export DATABASE_PASSWORD='yOmk%ix5KWy^ISlGl!4'
-#export DATABASE_SERVER='localhost'
 
 echo "Provisioning complete."
 

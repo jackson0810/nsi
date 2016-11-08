@@ -1,7 +1,8 @@
 from .base import *
 
+EMPLOYEE_URL = 'http://employees.nsilocal:8889'
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
@@ -9,10 +10,10 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ['DATABASE_NAME'],
-        'USER': os.environ['DATABASE_USER'],
-        'PASSWORD': os.environ['DATABASE_PASSWORD'],
-        'HOST': os.environ['DATABASE_SERVER'],
+        'NAME': 'nsi',
+        'USER': 'nsi',
+        'PASSWORD': 'nsi',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }

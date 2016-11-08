@@ -6,6 +6,8 @@ PROJECT="nsi"
 
 cd ${WORKDIR}${HOMEDIR}${PROJECT}
 
+cp ~/employees.navalsystemsinc.com/nsi-employees/shared/static/img/slides/*.* shared/static/img/slides
+
 echo "Collect static ..."
 ${WORKDIR}${HOMEDIR}env/bin/python3 manage.py collectstatic --noinput --settings=nsi.settings.production
 

@@ -56,7 +56,7 @@
                                     <div class="item{% if forloop.first %} active{% endif %}">
                                         <div class="row">
                                             <div class="col-sm-12 pull-center animated fadeInUpBig">
-                                                <img src="{% static 'img/slides/' %}{{ featured_image.get_image_name }}"
+                                                <img src="{% static MEDIA_URL %}{{ featured_image.get_image_name }}"
                                                      alt="{{ featured_image.title|striptags }}" />
                                             </div>
                                             <h4 class="carousel-caption">
