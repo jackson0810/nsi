@@ -107,7 +107,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'public/static'))
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = STATIC_ROOT + 'img/'
+MEDIA_ROOT = '/home/nsishell/employees.navalsystemsinc.com/public/static'
 MEDIA_URL = '/media/'
 
 # List of finder classes that know how to find static files in
