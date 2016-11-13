@@ -1,11 +1,13 @@
 from .base import *
 
-EMPLOYEE_URL = 'http://employees.nsilocal:8889'
+APPLICATION_URL = 'http://nsilocal:8888'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'y7d6zqxama2pqa&groktgw59i3exb9g8e4(!)v1^mw!tod5o5d'
 
 DATABASES = {
     'default': {

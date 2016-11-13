@@ -58,42 +58,45 @@
                                     <span class="icon-bar"></span> <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="{% url 'external:home' %}" title="Home">
+                                <a class="navbar-brand" href="{% url 'employees:home' %}" title="Home">
                                     <img src="{% static 'img/logo_warfighter.png' %}" style="position: absolute"/>
                                 </a>
                             </div>
-                            <div class="collapse navbar-collapse">
-                                <br/>
-                                <ul class="nav navbar-right" id="main-menu" style="position:relative">
-                                    <li><a href="{% url 'external:about_us' %}">About Us</a></li>
-                                    <li><a href="{% url 'external:services' %}">Services</a></li>
-                                    <li class="dropdown">
-                                        <a href="portfolio.htm" class="dropdown-toggle" id="locations-drop"
-                                           data-toggle="dropdown">Locations
-                                        </a>
+                            {% if request.user.is_authenticated %}
+                                <div class="collapse navbar-collapse">
+                                    <br/>
+                                    <ul class="nav navbar-right" role="navigation" id="main-menu" style="position:relative">
+                                        {% if request.user.account_type == 1 %}
+                                            <li class="dropdown">
+                                                <a href="" class="dropdown-toggle" id="forms-drop" data-toggle="dropdown">Forms</a>
 
-                                        <!-- Dropdown Menu -->
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="locations-drop">
-                                            <li role="menuitem"><a href="{% url 'external:china_lake' %}" tabindex="-1">China Lake</a></li>
-                                            <li role="menuitem"><a href="{% url 'external:jacksonville' %}" tabindex="-1">Jacksonville</a></li>
-                                            <li role="menuitem"><a href="{% url 'external:patuxent_river' %}" tabindex="-1">Patuxent River</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="{% url 'external:news' %}">News</a></li>
-                                    <li><a href="{% url 'external:clients_partners' %}">Clients/Partners</a></li>
+                                                <!-- Dropdown Menu -->
+                                                <ul class="dropdown-menu" role="menu" aria-labelledby="forms-drop">
+                                                    <li role="menuitem"><a href="{% url 'employees:employee_forms' %}" tabindex="-1">Employee Forms</a></li>
+                                                    <li role="menuitem"><a href="{% url 'employees:form_category' %}" tabindex="-1">Manage Form Categories</a></li>
+                                                    <li role="menuitem"><a href="{% url 'employees:forms_items' %}" tabindex="-1">Manage Forms</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{% url 'employees:contact_items' %}">Contact Items</a></li>
+                                            <li><a href="{% url 'employees:featured_images' %}">Featured Images</a></li>
+                                            <li><a href="{% url 'employees:news_items' %}">News Items</a></li>
+                                            <li class="dropdown">
+                                                <a href="" class="dropdown-toggle" id="contract-drop" data-toggle="dropdown">SeaPort-e</a>
 
-                                    <li class="dropdown">
-                                        <a href="" class="dropdown-toggle" id="contract-drop" data-toggle="dropdown">Contract Vehicles</a>
-
-                                        <!-- Dropdown Menu -->
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="contract-drop">
-                                            <li role="menuitem"><a href="{% url 'external:seaporte' %}" tabindex="-1">SeaPort-e</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="{% url 'external:careers' %}">Careers</a></li>
-                                    <li><a href="{% url 'external:contact' %}">Contact</a></li>
-                                </ul>
-                            </div>
+                                                <!-- Dropdown Menu -->
+                                                <ul class="dropdown-menu" role="menu" aria-labelledby="contract-drop">
+                                                    <li role="menuitem"><a href="{% url 'employees:task_orders' %}" tabindex="-1">Task Orders</a></li>
+                                                    <li role="menuitem"><a href="{% url 'employees:functional_capabilities' %}" tabindex="-1">Functional Capabilities</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{% url 'security:team_members' %}">Team Members</a></li>
+                                        {% else %}
+                                            <li><a href="{% url 'employees:employee_forms' %}">Employee Forms</a></li>
+                                        {% endif %}
+                                        <li><a href="{% url 'security:logout' %}">Logout</a></li>
+                                    </ul>
+                                </div>
+                            {% endif %}
                             <!--/.nav-collapse -->
                         </div>
                     </div>
@@ -101,28 +104,25 @@
             </div>
         </div>
 
-        {% if not current_url_name == 'home' %}
-            <div>
-                {% block content_highlight %}{% endblock %}
-                <div id="content">
-                    <div class="container">
-                        <!--Message Block-->
-                        {% include 'includes/message_block.html' %}
-                        <!--End Message Block-->
-                        {% block content %}{% endblock %}
-                        <div class="push"></div>
-                    </div>
+        <div>
+            {% block content_highlight %}{% endblock %}
+            <div id="content">
+                <div class="container">
+                    <!--Message Block-->
+                    {% include 'includes/message_block.html' %}
+                    <!--End Message Block-->
+                    {% block content %}{% endblock %}
+                    <div class="push"></div>
                 </div>
             </div>
-        {% else %}
-            {% block content_home %}{% endblock %}
-        {% endif %}
+
+        </div>
 
         <!-- ======== @Region: #footer ======== -->
         <footer id="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10 col contact-block">
+                    <div class="col-md-8 col contact-block">
                         <address>
                             <small>
                                 <strong>Naval Systems, Inc.</strong><br/>
@@ -131,15 +131,9 @@
                             </small>
                         </address>
                     </div>
-                    <div class="col-md-2">
-                        <h4 class="pull-right">
-                            <i class="fa fa-users"></i>
-                            <a href="{% url 'employees:home' %}" target="_blank">Team Resources</a>
-                        </h4>
-                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-10 col contact-block">
+                    <div class="col-md-12">
                         <small>© 2016 Naval Systems, Inc.</small>
                     </div>
                 </div>

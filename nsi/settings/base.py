@@ -50,12 +50,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     'sorl.thumbnail',
 ]
 
 # Applications
 INSTALLED_APPS += [
+    'employees',
     'external',
     'nsi',
     'security',
@@ -78,6 +78,7 @@ ROOT_URLCONF = 'nsi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -107,17 +108,9 @@ USE_TZ = True
 STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'public/static'))
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = '/home/nsishell/employees.navalsystemsinc.com/public/static'
+MEDIA_ROOT = ''
 MEDIA_URL = '/media/'
 
-# List of finder classes that know how to find static files in
-# various locations.
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
-
-EMPLOYEE_URL = 'https://employess.navalsystemsinc.com'
 
 def ignore_404_errors(record):
     if record.getMessage():
