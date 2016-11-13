@@ -1,22 +1,22 @@
 from .base import *
 
 DEBUG = False
-ALLOWED_HOSTS = ['n-s-i.us']
+ALLOWED_HOSTS = ['navalsystemsinc.com']
 
-SECRET_KEY = os.environ['SECRET_KEY_PROD']
+SECRET_KEY = os.environ['SECRET_KEY']
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ['DATABASE_NAME_PROD'],
-        'USER': os.environ['DATABASE_USER_PROD'],
-        'PASSWORD': os.environ['DATABASE_PASSWORD_PROD'],
-        'HOST': os.environ['DATABASE_SERVER_PROD'],
+        'NAME': os.environ['DATABASE_NAME'],
+        'USER': os.environ['DATABASE_USER'],
+        'PASSWORD': os.environ['DATABASE_PASSWORD'],
+        'HOST': os.environ['DATABASE_SERVER'],
         'PORT': '3306',
     }
 }
 
-LOG_PATH = '/home/nsishell/n-s-i/logs/'
+LOG_PATH = '/home/nsishell/navalsystemsinc/logs/'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
