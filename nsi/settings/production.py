@@ -6,7 +6,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['navalsystemsinc.com']
 
 SECRET_KEY = os.environ['SECRET_KEY']
-
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',

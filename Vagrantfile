@@ -13,11 +13,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "nsilocal"
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/xenial64"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "https://atlas.hashicorp.com/ubuntu/boxes/trusty64"
+  config.vm.box_url = "https://atlas.hashicorp.com/ubuntu/boxes/xenial64"
 
   # provisioning script
   config.vm.provision "shell", path: "provision_vagrant.sh"

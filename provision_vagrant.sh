@@ -12,7 +12,7 @@ echo "Installing required Python and other packages ..."
 apt-get install -y build-essential unixodbc-dev unixodbc-bin unixodbc supervisor python3-pip python3-dev
 apt-get install -y libldap2-dev libssl-dev libsasl2-dev libjpeg8-dev libjpeg62 libtiff4-dev zlib1g-dev libfreetype6-dev
 apt-get install -y liblcms2-dev libwebp-dev libaio1 g++ nginx git wget curl vim zip unzip libpq-dev
-apt-get install -y libmysqlclient-dev expect openssl mysql-server mysql_secure_installation mysql_install_db
+apt-get install -y libmysqlclient-dev expect openssl
 
 if [ ! -f /vagrant/requirements_installed ]
 then
@@ -37,5 +37,5 @@ then
     chmod -R 777 /var/log/nsi
 fi
 
-echo "Provisioning complete."
+echo "Provisioning complete. Install mysql-server mysql-client then reinstall requirements."
 

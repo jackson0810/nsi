@@ -25,11 +25,12 @@ def services(request):
 
 
 def clients_partners(request):
-    return render(request, 'clients_partners.html')
+    return render(request, 'clients-partners.html')
 
 
-def china_lake(request):
-    return render(request, 'locations/china_lake.html')
+# Locations
+def locations(request, location):
+    return render(request, 'locations/{}.html'.format(location))
 
 
 def jacksonville(request):

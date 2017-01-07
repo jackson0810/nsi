@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Norfolk, Richmond and Alexandria{% endblock %}
+
+{% block content_highlight %}
+    <!-- ======== @Region: #highlighted ======== -->
+    <div id="highlighted">
+        <div class="container">
+            <div class="header">
+                <h2 class="page-title">
+                    <span>Norfolk, Richmond and Alexandria</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+    <!-- ======== @Region: #content ======== -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="block">
+
+            </div>
+        </div>
+
+        <!-- sidebar -->
+        <div class="col-md-4 sidebar sidebar-right">
+            <div class="inner">
+                <div class="block">
+                    <h3 class="block-title sub-title">
+                        <span>Contact</span>
+                    </h3>
+                    <!--accordion-->
+                    <div class="panel-group panel-primary" id="accordion2">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Contact 1</strong><br/>
+                                <i class="fa fa-phone"></i> 318.555.1212<br/>
+                                <i class="fa fa-mobile-phone"></i> 318.555.3434
+                            </div>
+
+                            <div class="panel-heading">
+                                <strong>Contact 2</strong><br/>
+                                <i class="fa fa-phone"></i> 813.555.2121<br/>
+                                <i class="fa fa-mobile-phone"></i> 813.555.4343
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

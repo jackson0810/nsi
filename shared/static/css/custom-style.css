@@ -145,6 +145,24 @@ ul.shaded-glyph li i.glyphicon {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
 
+@import url('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css');
+
+.custom-bullet li {
+    display: block;
+}
+
+.custom-bullet li:before
+{
+    /*Using a Bootstrap glyphicon as the bullet point*/
+    content: "\e080";
+    font-family: 'Glyphicons Halflings';
+    font-size: 9px;
+    float: left;
+    margin-top: 4px;
+    margin-left: -17px;
+    color: #CCCCCC;
+}
+
 .loginName {
   display: inline-block;
   float: left;
@@ -185,4 +203,8 @@ img.about_us_img {
 
 .edit_column{
     width: 75px;
+}
+
+ul.glyphicon-padded{
+    padding-left: 15px;
 }

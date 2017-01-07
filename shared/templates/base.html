@@ -74,9 +74,11 @@
 
                                         <!-- Dropdown Menu -->
                                         <ul class="dropdown-menu" role="menu" aria-labelledby="locations-drop">
-                                            <li role="menuitem"><a href="{% url 'external:china_lake' %}" tabindex="-1">China Lake</a></li>
-                                            <li role="menuitem"><a href="{% url 'external:jacksonville' %}" tabindex="-1">Jacksonville</a></li>
-                                            <li role="menuitem"><a href="{% url 'external:patuxent_river' %}" tabindex="-1">Patuxent River</a></li>
+                                            <li role="menuitem"><a href="{% url 'external:locations' 'china-lake' %}" tabindex="-1">China Lake, CA</a></li>
+                                            <li role="menuitem"><a href="{% url 'external:locations' 'jacksonville' %}" tabindex="-1">Jacksonville, FL</a></li>
+                                            <li role="menuitem"><a href="{% url 'external:locations' 'nor-rich-ar' %}" tabindex="-1">Norfolk/Richmond/Arlington, VA</a></li>
+                                            <li role="menuitem"><a href="{% url 'external:locations' 'patuxent-river' %}" tabindex="-1">Patuxent River, MD</a></li>
+                                            <li role="menuitem"><a href="{% url 'external:locations' 'philadelphia' %}" tabindex="-1">Philadelphia, PA</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="{% url 'external:news' %}">News</a></li>

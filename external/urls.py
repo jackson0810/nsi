@@ -8,9 +8,9 @@ urlpatterns = [
     url(r'^about/$', views.about_us, name='about_us'),
     url(r'^services/$', views.services, name="services"),
     url(r'^clients/partners/$', views.clients_partners, name="clients_partners"),
-    url(r'^locations/china-lake/$', views.china_lake, name='china_lake'),
-    url(r'^locations/jacksonville/$', views.jacksonville, name='jacksonville'),
-    url(r'^locations/patuxent-river/$', views.patuxent_river, name='patuxent_river'),
+    url(r'^locations/(china-lake|jacksonville|patuxent-river|nor-rich-ar|philadelphia)/$', views.locations,
+        name='locations'),
+
     url(r'^contract/vehicles/seaport-e/$', views.seaporte, name='seaporte'),
     url(r'^careers/$', views.careers, name='careers'),
     url(r'^news/$', views.news, name='news'),
